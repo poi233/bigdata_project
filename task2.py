@@ -19,24 +19,55 @@ def mkdir(path):
         os.makedirs(path)
 
 
-def check_semantic_type(file, input_df):
-    pass
-
-
-def is_person_name(file, input_df):
-    pass
-
-
-def is_business_name(file, input_df):
-    pass
-
-
-def is_phone_number(file, input_df):
-    pass
-
-
-def is_address(file, input_df):
-    pass
+def check_semantic_type(col, input_df):
+    col = str(col).replace("_", " ").lower()
+    # Person Name
+    if ('first' in col or 'last' in col) and 'name' in col:
+        pass
+    # Business Name
+    if 'business' in col and 'name' in col:
+        pass
+    # Phone Number
+    if 'phone' in col:
+        pass
+    # Address
+    # Street Name
+    # City
+    # Neighborhood
+    # LAT/LON coordinates
+    # Zip code
+    if 'zip' in col:
+        pass
+    # Borough
+    if 'boro' in col:
+        pass
+    # School name
+    if col == 'school' or ('school' in col and 'name' in col):
+        pass
+    # Color
+    if 'color' in col:
+        pass
+    # Car Make
+    if 'make' in col:
+        pass
+    # City Agency
+    # Area of study
+    # subjects in school
+    # school level
+    if 'school' in col and 'level' in col:
+        pass
+    # college/university names
+    # websites
+    if 'website' in col:
+        pass
+    # building classification
+    # vehicle type
+    if 'vehicle' in col and 'type' in col:
+        pass
+    # type of location
+    # parks/playground
+    if 'park' in col and 'name' in col:
+        pass
 
 
 def init_files():

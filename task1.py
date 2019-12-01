@@ -91,7 +91,7 @@ def profile(dataset):
         number_distinct_values = col_rdd.distinct().count()
         frequent_values = col_rdd.map(lambda x: (x, 1)) \
             .reduceByKey(lambda a, b: a + b) \
-            .sortBy(lambda x: (-x[1], x[0])) \
+            .sortBy(lambda x: -x[1]) \
             .map(lambda x: x[0]) \
             .take(5)
         # get col stat according to type
@@ -139,8 +139,9 @@ def profile(dataset):
         column["data_types"] = data_types
         output["columns"].append(column)
     # save to json file
-    with open("./profile/%s.json" % dataset, 'w') as fp:
+    with open("./task1_data/%s.json" % dataset, 'w') as fp:
         json.dump(output, fp, cls=MyEncoder)
+    print("%s processed OK" % dataset)
 
 
 if __name__ == "__main__":
@@ -151,8 +152,10 @@ if __name__ == "__main__":
     data_dir = file[:file.rfind("/") + 1]
     data_sets = sc.textFile(file).map(lambda x: x.split("\t")[0]).collect()
     # create result dir
-    mkdir("./profile")
+    mkdir("./task1_data")
     # run profile for each dataset
     for dataset in data_sets:
         if not os.path.exists(data_dir + dataset + ".json"):
             profile(dataset)
+        else:
+            print("%s already processed" % dataset)
