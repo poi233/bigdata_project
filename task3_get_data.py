@@ -110,6 +110,6 @@ if __name__ == "__main__":
                      'wfw5-9psu', '9cx5-kdi8', 'weuc-cs8c', '9nyy-a6qt',
                      'expp-gbrz', 'gi42-6x8d', '9ny4-8k6g', 'y9gu-cxxw',
                      'mwus-92t3']
-    # get_food_data(data_dir, files_311)
-    # get_res_inspect_data(data_dir, file_res_inspect)
+    get_food_data(data_dir, files_311)
+    get_res_inspect_data(data_dir, file_res_inspect)
     get_poverty_data(data_dir, files_poverty)

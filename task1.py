@@ -30,7 +30,6 @@ def get_type(x):
     if float_pattern.match(x.replace(",", "")):
         return "REAL"
     try:
-        # datefinder.find_dates()
         date = reorganize(x)
         time.strptime(date, "%Y-%m-%d")
         return "DATE"
@@ -82,9 +81,12 @@ def profile(dataset):
         # get col
         col_rdd = dataset_rdd.map(lambda x: x[i] if i < len(x) else None).cache()
         # get col type
-        col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
-            .reduceByKey(lambda a, b: a + b) \
-            .reduce(combine_types)[0]
+        if 'date' in header[i].lower():
+            col_type = "DATE"
+        else:
+            col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
+                .reduceByKey(lambda a, b: a + b) \
+                .reduce(combine_types)[0]
         # get col stat
         number_non_empty_cells = col_rdd.filter(not_null).count()
         number_empty_cells = col_rdd.filter(is_null).count()
@@ -99,7 +101,7 @@ def profile(dataset):
         data_types["type"] = col_type
         data_types["count"] = number_non_empty_cells + number_empty_cells
         if col_type == "REAL":
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "REAL").map(lambda x: float(x.replace(",", ""))).cache()
+            col_rdd = col_rdd.filter(lambda x: get_type(x) == "REAL" or get_type(x) == "INTEGER").map(lambda x: float(x.replace(",", ""))).cache()
             min_value = col_rdd.sortBy(lambda x: x).take(1)
             max_value = col_rdd.top(1)
             data_types["min_value"] = min_value[0] if len(min_value) > 0 else None
@@ -124,7 +126,7 @@ def profile(dataset):
                 .reduce(lambda a, b: (a[0] + b[0], a[1] + b[1]))
             data_types["average_length"] = float(total_length) / float(count) if count > 0 else 0
         else:
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE").map(lambda x: x.encode("utf-8")).cache()
+            col_rdd = col_rdd.filter(not_null).map(lambda x: x.encode("utf-8")).cache()
             min_value = col_rdd.sortBy(lambda x: x).take(1)
             max_value = col_rdd.top(1)
             data_types["min_value"] = min_value[0] if len(min_value) > 0 else None
