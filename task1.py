@@ -107,6 +107,7 @@ def profile(dataset):
         col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
             .reduceByKey(lambda a, b: a + b) \
             .reduce(combine_types)[0]
+        print("%s type is %s" % (column_name, col_type))
         # get col stat
         number_non_empty_cells = col_rdd.filter(not_null).count()
         number_empty_cells = col_rdd.filter(is_null).count()
