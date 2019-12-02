@@ -46,7 +46,8 @@ def get_food_data(data_dir, files_311):
         full_file = data_dir + file + ".tsv.gz"
         opendata_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(full_file)
         food_df = opendata_df.select("Created Date",
-                                     "Borough", "Complaint Type") \
+                                     "Borough",
+                                     "Complaint Type") \
             .filter("`Complaint Type` like '%Food%'")
         oldColumns = food_df.schema.names
         newColumns = ["date", "borough", "type"]

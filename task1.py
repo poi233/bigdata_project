@@ -4,8 +4,9 @@ import os
 import re
 import time
 from dateutil.parser import *
+from pyspark.sql import SparkSession
+import _thread
 
-from pyspark import SparkContext
 
 
 class MyEncoder(json.JSONEncoder):
@@ -26,7 +27,7 @@ def get_type(x):
         return "NONE"
     int_pattern = re.compile(r'^\d+$')
     float_pattern = re.compile(r'^\d+\.\d*$')
-    if len(str(x)) >= 6:
+    if len(x) >= 6:
         try:
             # hours_minutes_seconds_24_pattern = re.compile('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$')
             # hours_minutes_seconds_12_pattern = re.compile('^(1[0-2]|0?[1-9]):([0-5]?[0-9]):([0-5]?[0-9])(●?[AP]M)?$')
@@ -40,7 +41,7 @@ def get_type(x):
             # condition4 = hours_minutes_24_pattern.search(date_time)
             # if there is any date or time match found, we identify the type as Date/Time
             #
-            parse(str(x))
+            parse(x)
             return "DATE/TIME"
         except:
             pass
@@ -87,23 +88,25 @@ def combine_types(a, b):
 
 
 def profile(dataset):
+    print("%s start processing................................." % dataset)
     output = dict()
     output["dataset_name"] = dataset
     output["columns"] = []
     output["key_column_candidates"] = []
-    dataset_rdd = sc.textFile(data_dir + dataset + ".tsv.gz").map(lambda x: x.split("\t"))
-    header = dataset_rdd.first()
-    dataset_rdd = dataset_rdd.filter(lambda line: line[0] != header[0])
-    for i in range(len(header)):
+    dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(data_dir + dataset + ".tsv.gz")
+    print("%s data load ok" % dataset)
+    columns = dataset_df.columns
+    # dataset_rdd = sc.textFile(data_dir + dataset + ".tsv.gz").map(lambda x: x.split("\t"))
+    # header = dataset_rdd.first()
+    # dataset_rdd = dataset_rdd.filter(lambda line: line[0] != header[0])
+    for column_name in columns:
+        print("start column %s" % column_name)
         # get col
-        col_rdd = dataset_rdd.map(lambda x: x[i] if i < len(x) else None).cache()
+        col_rdd = dataset_df.select(column_name).rdd.map(lambda x: str(x[0])).cache()
         # get col type
-        if False:    # 'date' in header[i].lower():
-            col_type = "DATE"
-        else:
-            col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
-                .reduceByKey(lambda a, b: a + b) \
-                .reduce(combine_types)[0]
+        col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
+            .reduceByKey(lambda a, b: a + b) \
+            .reduce(combine_types)[0]
         # get col stat
         number_non_empty_cells = col_rdd.filter(not_null).count()
         number_empty_cells = col_rdd.filter(is_null).count()
@@ -152,34 +155,47 @@ def profile(dataset):
             data_types["max_value"] = max_value[0] if max_value is not None else None
         # identify candidate for keys
         if col_type != "DATE/TIME" and number_distinct_values == number_empty_cells + number_non_empty_cells:
-            output["key_column_candidates"].append(header[i])
+            output["key_column_candidates"].append(column_name)
         # save data
         column = dict()
-        column["column_name"] = header[i]
+        column["column_name"] = column_name
         column["number_non_empty_cells"] = number_non_empty_cells
         column["number_empty_cells"] = number_empty_cells
         column["number_distinct_values"] = number_distinct_values
         column["frequent_values"] = frequent_values
         column["data_types"] = data_types
         output["columns"].append(column)
+        print("column %s ok" % column_name)
     # save to json file
     with open("./task1_data/%s.json" % dataset, 'w') as fp:
         json.dump(output, fp, cls=MyEncoder)
     print("%s processed OK" % dataset)
 
-
 if __name__ == "__main__":
     # init
-    sc = SparkContext()
+    spark = SparkSession \
+        .builder \
+        .appName("bigdata_project") \
+        .config("spark.some.config.option", "some-value") \
+        .getOrCreate()
     # get file and dir
     file = "/user/hm74/NYCOpenData/datasets.tsv"
     data_dir = file[:file.rfind("/") + 1]
-    data_sets = sc.textFile(file).map(lambda x: x.split("\t")[0]).collect()
+    data_sets = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(file).rdd.map(lambda x: x[0]).collect()
+    # data_sets = sc.textFile(file).map(lambda x: x.split("\t")[0]).collect()
     # create result dir
     mkdir("./task1_data")
     # run profile for each dataset
-    for dataset in data_sets:
-        if not os.path.exists('/home/hj809/proj/task1_data/' + dataset + ".json"):
-            profile(dataset)
+    offset = int(len(data_sets) / 3)
+    my_dir = '/home/yp1207/project_pycharm/task1_data/'
+    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh']
+    for i in range(len(data_sets)):
+        # profile(data_sets[i + offset])
+        if data_sets[i + offset] in big_datasets:
+            continue
+        if i + offset >= len(data_sets):
+            break
+        if not os.path.exists(my_dir + data_sets[i + offset] + ".json"):
+            profile(data_sets[i + offset])
         else:
-            print("%s already processed" % dataset)
+            print("%s already processed" % data_sets[i + offset])
