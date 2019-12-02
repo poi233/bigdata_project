@@ -133,7 +133,7 @@ def profile(dataset):
             data_types["max_value"] = max_value if max_value is not None else None
             data_types["mean"] = col_rdd.mean()
             data_types["stddev"] = col_rdd.stdev()
-        elif col_type == "TEXT":
+        elif number_non_empty_cells == 0 or col_type == "TEXT":
             col_rdd = col_rdd.filter(lambda x: x is not None).map(lambda x: x.encode("utf-8")).cache()
             data_types["shortest_values"] = col_rdd.distinct() \
                 .takeOrdered(5, key=lambda x: (len(x), x))
@@ -177,7 +177,7 @@ if __name__ == "__main__":
     mkdir("./task1_data")
     # run profile for each dataset
     for dataset in data_sets:
-        if not os.path.exists(data_dir + dataset + ".json"):
+        if not os.path.exists('/home/hj809/proj/task1_data/' + dataset + ".json"):
             profile(dataset)
         else:
             print("%s already processed" % dataset)
