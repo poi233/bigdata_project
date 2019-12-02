@@ -133,7 +133,7 @@ def profile(dataset):
             data_types["max_value"] = max_value if max_value is not None else None
             data_types["mean"] = col_rdd.mean()
             data_types["stddev"] = col_rdd.stdev()
-        elif number_non_empty_cells == 0 or col_type == "TEXT":
+        elif col_type == "TEXT":
             col_rdd = col_rdd.filter(lambda x: x is not None).map(lambda x: x.encode("utf-8")).cache()
             data_types["shortest_values"] = col_rdd.distinct() \
                 .takeOrdered(5, key=lambda x: (len(x), x))
@@ -142,6 +142,8 @@ def profile(dataset):
             total_length, count = col_rdd.map(lambda x: (len(x), 1)) \
                 .reduce(lambda a, b: (a[0] + b[0], a[1] + b[1]))
             data_types["average_length"] = float(total_length) / float(count) if count > 0 else 0
+        elif number_non_empty_cells == 0:
+            data_types["type"] = "empty"
         else:
             col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE/TIME").map(lambda x: (str(x), parse(str(x)))).cache()
             min_value = col_rdd.min(lambda x: x[1])
