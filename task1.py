@@ -100,9 +100,11 @@ def profile(dataset):
     # header = dataset_rdd.first()
     # dataset_rdd = dataset_rdd.filter(lambda line: line[0] != header[0])
     for column_name in columns:
+        valid_column_name = column_name.replace(".", "").replace("`", "")
+        dataset_df = dataset_df.withColumnRenamed(column_name, valid_column_name)
         print("start column %s" % column_name)
         # get col
-        col_rdd = dataset_df.select(column_name).rdd.map(lambda x: str(x[0])).cache()
+        col_rdd = dataset_df.select(valid_column_name.replace(".", "")).rdd.map(lambda x: str(x[0])).cache()
         # get col type
         col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
             .reduceByKey(lambda a, b: a + b) \
@@ -189,7 +191,7 @@ if __name__ == "__main__":
     # run profile for each dataset
     offset = int(len(data_sets) / 3)
     my_dir = '/home/yp1207/project_pycharm/task1_data/'
-    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh']
+    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh', 'w7fs-fd9i']
     for i in range(len(data_sets)):
         # profile(data_sets[i + offset])
         if data_sets[i + offset] in big_datasets:
