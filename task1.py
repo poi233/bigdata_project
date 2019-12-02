@@ -29,26 +29,22 @@ def get_type(x):
     float_pattern = re.compile(r'^\d+\.\d*$')
     if len(x) >= 6:
         try:
-            # hours_minutes_seconds_24_pattern = re.compile('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$')
-            # hours_minutes_seconds_12_pattern = re.compile('^(1[0-2]|0?[1-9]):([0-5]?[0-9]):([0-5]?[0-9])(●?[AP]M)?$')
-            # hours_minutes_24_pattern = re.compile('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$')
-            # hours_minutes_12_pattern = re.compile('^(1[0-2]|0?[1-9]):([0-5]?[0-9])(●?[AP]M)?$')
-            #
-            # date_time = reorganize(x)
-            # condition1 = hours_minutes_seconds_24_pattern.search(date_time)
-            # condition2 = hours_minutes_seconds_12_pattern.search(date_time)
-            # condition3 = hours_minutes_12_pattern.search(date_time)
-            # condition4 = hours_minutes_24_pattern.search(date_time)
-            # if there is any date or time match found, we identify the type as Date/Time
-            #
             parse(x)
             return "DATE/TIME"
         except:
             pass
     if int_pattern.match(x.replace(",", "")):
-        return "INTEGER"
+        try:
+            int(x.replace(",", ""))
+            return "INTEGER"
+        except:
+            pass
     if float_pattern.match(x.replace(",", "")):
-        return "REAL"
+        try:
+            float(x.replace(",", ""))
+            return "REAL"
+        except:
+            pass
     return "TEXT"
 
 
@@ -100,6 +96,9 @@ def profile(dataset):
     # header = dataset_rdd.first()
     # dataset_rdd = dataset_rdd.filter(lambda line: line[0] != header[0])
     for column_name in columns:
+        if column_name == 'VendorID':
+            print("Potential large Dataset skip")
+            return
         valid_column_name = column_name.replace(".", "").replace("`", "")
         dataset_df = dataset_df.withColumnRenamed(column_name, valid_column_name)
         print("start column %s" % column_name)
@@ -148,14 +147,18 @@ def profile(dataset):
             total_length, count = col_rdd.map(lambda x: (len(x), 1)) \
                 .reduce(lambda a, b: (a[0] + b[0], a[1] + b[1]))
             data_types["average_length"] = float(total_length) / float(count) if count > 0 else 0
-        elif number_non_empty_cells == 0:
-            data_types["type"] = "empty"
-        else:
+        elif col_type == "DATE/TIME":
             col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE/TIME").map(lambda x: (str(x), parse(str(x)))).cache()
             min_value = col_rdd.min(lambda x: x[1])
             max_value = col_rdd.max(lambda x: x[1])
             data_types["min_value"] = min_value[0] if min_value is not None else None
             data_types["max_value"] = max_value[0] if max_value is not None else None
+        else:
+            data_types["type"] = "TEXT"
+            data_types["count"] = number_non_empty_cells + number_empty_cells
+            data_types["shortest_values"] = []
+            data_types["longest_values"] = []
+            data_types["average_length"] = []
         # identify candidate for keys
         if col_type != "DATE/TIME" and number_distinct_values == number_empty_cells + number_non_empty_cells:
             output["key_column_candidates"].append(column_name)
@@ -191,7 +194,7 @@ if __name__ == "__main__":
     # run profile for each dataset
     offset = int(len(data_sets) / 3)
     my_dir = '/home/yp1207/project_pycharm/task1_data/'
-    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh', 'w7fs-fd9i']
+    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh', 'w7fs-fd9i', 't29m-gskq']
     for i in range(len(data_sets)):
         # profile(data_sets[i + offset])
         if data_sets[i + offset] in big_datasets:
