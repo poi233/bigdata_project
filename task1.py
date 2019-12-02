@@ -6,6 +6,7 @@ import re
 from dateutil.parser import *
 from pyspark.sql import SparkSession
 
+MIN_SIZE = 500000
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -78,7 +79,7 @@ def profile(dataset):
     dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
         data_dir + dataset + ".tsv.gz")
     print("%s data load ok" % dataset)
-    if dataset_df.count() > 2000000:
+    if dataset_df.count() > MIN_SIZE:
         print("%s is a large dataset skip now" % dataset)
         return
     columns = dataset_df.columns
@@ -181,13 +182,24 @@ if __name__ == "__main__":
     # run profile for each dataset
     offset = int(len(data_sets) / 3)
     my_dir = '/home/yp1207/project_pycharm/task1_data/'
-    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh', 'w7fs-fd9i', 't29m-gskq']
-    for i in range(len(data_sets)):
-        if data_sets[i + offset] in big_datasets:
-            continue
-        if i + offset >= len(data_sets):
-            break
-        if not os.path.exists(my_dir + data_sets[i + offset] + ".json"):
-            profile(data_sets[i + offset])
-        else:
-            print("%s already processed" % data_sets[i + offset])
+    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh',
+                    'w7fs-fd9i', 't29m-gskq', 'q5mz-t52e', '2upf-qytp',
+                    'sxmw-f24h', 'erm2-nwe9', '3rfa-3xsf', 'uzcy-9puk',
+                    'aiww-p3af', 'hy4q-igkk', 'vwpc-kje2']
+    has_not_done = True
+    while has_not_done:
+        not_done = 0
+        for i in range(len(data_sets)):
+            if data_sets[i + offset] in big_datasets:
+                continue
+            if i + offset >= len(data_sets):
+                break
+            if not os.path.exists(my_dir + data_sets[i + offset] + ".json"):
+                not_done += 1
+                profile(data_sets[i + offset])
+            else:
+                print("%s already processed" % data_sets[i + offset])
+        if not_done == 0:
+            has_not_done = False
+        MIN_SIZE += 500000
+
