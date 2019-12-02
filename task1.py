@@ -2,11 +2,9 @@
 import json
 import os
 import re
-import time
+
 from dateutil.parser import *
 from pyspark.sql import SparkSession
-import _thread
-
 
 
 class MyEncoder(json.JSONEncoder):
@@ -48,18 +46,6 @@ def get_type(x):
     return "TEXT"
 
 
-
-
-# # e.g. 2008-05-29T00:00:00
-# def reorganize(x):
-#     if "T" in x:
-#         x = x.split("T")[0]
-#     for c in x:
-#         if not c.isdigit():
-#             x.replace(c, "-")
-#     return x
-
-
 def is_null(x):
     return x is None or x == ""
 
@@ -89,16 +75,14 @@ def profile(dataset):
     output["dataset_name"] = dataset
     output["columns"] = []
     output["key_column_candidates"] = []
-    dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(data_dir + dataset + ".tsv.gz")
+    dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
+        data_dir + dataset + ".tsv.gz")
     print("%s data load ok" % dataset)
+    if dataset_df.count() > 2000000:
+        print("%s is a large dataset skip now" % dataset)
+        return
     columns = dataset_df.columns
-    # dataset_rdd = sc.textFile(data_dir + dataset + ".tsv.gz").map(lambda x: x.split("\t"))
-    # header = dataset_rdd.first()
-    # dataset_rdd = dataset_rdd.filter(lambda line: line[0] != header[0])
     for column_name in columns:
-        if column_name == 'VendorID':
-            print("Potential large Dataset skip")
-            return
         valid_column_name = column_name.replace(".", "").replace("`", "")
         dataset_df = dataset_df.withColumnRenamed(column_name, valid_column_name)
         print("start column %s" % column_name)
@@ -123,7 +107,8 @@ def profile(dataset):
         data_types["type"] = col_type
         data_types["count"] = number_non_empty_cells + number_empty_cells
         if col_type == "REAL":
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "REAL" or get_type(x) == "INTEGER").map(lambda x: float(x.replace(",", ""))).cache()
+            col_rdd = col_rdd.filter(lambda x: get_type(x) == "REAL" or get_type(x) == "INTEGER").map(
+                lambda x: float(x.replace(",", ""))).cache()
             min_value = col_rdd.min()
             max_value = col_rdd.max()
             data_types["min_value"] = min_value if min_value is not None else None
@@ -148,7 +133,8 @@ def profile(dataset):
                 .reduce(lambda a, b: (a[0] + b[0], a[1] + b[1]))
             data_types["average_length"] = float(total_length) / float(count) if count > 0 else 0
         elif col_type == "DATE/TIME":
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE/TIME").map(lambda x: (str(x), parse(str(x)))).cache()
+            col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE/TIME").map(
+                lambda x: (str(x), parse(str(x)))).cache()
             min_value = col_rdd.min(lambda x: x[1])
             max_value = col_rdd.max(lambda x: x[1])
             data_types["min_value"] = min_value[0] if min_value is not None else None
@@ -177,6 +163,7 @@ def profile(dataset):
         json.dump(output, fp, cls=MyEncoder)
     print("%s processed OK" % dataset)
 
+
 if __name__ == "__main__":
     # init
     spark = SparkSession \
@@ -187,8 +174,8 @@ if __name__ == "__main__":
     # get file and dir
     file = "/user/hm74/NYCOpenData/datasets.tsv"
     data_dir = file[:file.rfind("/") + 1]
-    data_sets = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(file).rdd.map(lambda x: x[0]).collect()
-    # data_sets = sc.textFile(file).map(lambda x: x.split("\t")[0]).collect()
+    data_sets = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(file).rdd.map(
+        lambda x: x[0]).collect()
     # create result dir
     mkdir("./task1_data")
     # run profile for each dataset
@@ -196,7 +183,6 @@ if __name__ == "__main__":
     my_dir = '/home/yp1207/project_pycharm/task1_data/'
     big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh', 'w7fs-fd9i', 't29m-gskq']
     for i in range(len(data_sets)):
-        # profile(data_sets[i + offset])
         if data_sets[i + offset] in big_datasets:
             continue
         if i + offset >= len(data_sets):
