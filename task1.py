@@ -3,6 +3,7 @@ import json
 import os
 import re
 import time
+from dateutil.parser import *
 
 from pyspark import SparkContext
 
@@ -25,26 +26,41 @@ def get_type(x):
         return "NONE"
     int_pattern = re.compile(r'^\d+$')
     float_pattern = re.compile(r'^\d+\.\d*$')
+    if len(str(x)) >= 6:
+        try:
+            # hours_minutes_seconds_24_pattern = re.compile('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])$')
+            # hours_minutes_seconds_12_pattern = re.compile('^(1[0-2]|0?[1-9]):([0-5]?[0-9]):([0-5]?[0-9])(●?[AP]M)?$')
+            # hours_minutes_24_pattern = re.compile('^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$')
+            # hours_minutes_12_pattern = re.compile('^(1[0-2]|0?[1-9]):([0-5]?[0-9])(●?[AP]M)?$')
+            #
+            # date_time = reorganize(x)
+            # condition1 = hours_minutes_seconds_24_pattern.search(date_time)
+            # condition2 = hours_minutes_seconds_12_pattern.search(date_time)
+            # condition3 = hours_minutes_12_pattern.search(date_time)
+            # condition4 = hours_minutes_24_pattern.search(date_time)
+            # if there is any date or time match found, we identify the type as Date/Time
+            #
+            parse(str(x))
+            return "DATE/TIME"
+        except:
+            pass
     if int_pattern.match(x.replace(",", "")):
         return "INTEGER"
     if float_pattern.match(x.replace(",", "")):
         return "REAL"
-    try:
-        date = reorganize(x)
-        time.strptime(date, "%Y-%m-%d")
-        return "DATE"
-    except ValueError:
-        return "TEXT"
+    return "TEXT"
 
 
-# e.g. 2008-05-29T00:00:00
-def reorganize(x):
-    if "T" in x:
-        x = x.split("T")[0]
-    for c in x:
-        if not c.isdigit():
-            x.replace(c, "-")
-    return x
+
+
+# # e.g. 2008-05-29T00:00:00
+# def reorganize(x):
+#     if "T" in x:
+#         x = x.split("T")[0]
+#     for c in x:
+#         if not c.isdigit():
+#             x.replace(c, "-")
+#     return x
 
 
 def is_null(x):
@@ -74,6 +90,7 @@ def profile(dataset):
     output = dict()
     output["dataset_name"] = dataset
     output["columns"] = []
+    output["key_column_candidates"] = []
     dataset_rdd = sc.textFile(data_dir + dataset + ".tsv.gz").map(lambda x: x.split("\t"))
     header = dataset_rdd.first()
     dataset_rdd = dataset_rdd.filter(lambda line: line[0] != header[0])
@@ -81,7 +98,7 @@ def profile(dataset):
         # get col
         col_rdd = dataset_rdd.map(lambda x: x[i] if i < len(x) else None).cache()
         # get col type
-        if 'date' in header[i].lower():
+        if False:    # 'date' in header[i].lower():
             col_type = "DATE"
         else:
             col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
@@ -102,18 +119,18 @@ def profile(dataset):
         data_types["count"] = number_non_empty_cells + number_empty_cells
         if col_type == "REAL":
             col_rdd = col_rdd.filter(lambda x: get_type(x) == "REAL" or get_type(x) == "INTEGER").map(lambda x: float(x.replace(",", ""))).cache()
-            min_value = col_rdd.sortBy(lambda x: x).take(1)
-            max_value = col_rdd.top(1)
-            data_types["min_value"] = min_value[0] if len(min_value) > 0 else None
-            data_types["max_value"] = max_value[0] if len(max_value) > 0 else None
+            min_value = col_rdd.min()
+            max_value = col_rdd.max()
+            data_types["min_value"] = min_value if min_value is not None else None
+            data_types["max_value"] = max_value if max_value is not None else None
             data_types["mean"] = col_rdd.mean()
             data_types["stddev"] = col_rdd.stdev()
         elif col_type == "INTEGER":
             col_rdd = col_rdd.filter(lambda x: get_type(x) == "INTEGER").map(lambda x: int(x.replace(",", ""))).cache()
-            min_value = col_rdd.sortBy(lambda x: x).take(1)
-            max_value = col_rdd.top(1)
-            data_types["min_value"] = min_value[0] if len(min_value) > 0 else None
-            data_types["max_value"] = max_value[0] if len(max_value) > 0 else None
+            min_value = col_rdd.min()
+            max_value = col_rdd.max()
+            data_types["min_value"] = min_value if min_value is not None else None
+            data_types["max_value"] = max_value if max_value is not None else None
             data_types["mean"] = col_rdd.mean()
             data_types["stddev"] = col_rdd.stdev()
         elif col_type == "TEXT":
@@ -126,11 +143,14 @@ def profile(dataset):
                 .reduce(lambda a, b: (a[0] + b[0], a[1] + b[1]))
             data_types["average_length"] = float(total_length) / float(count) if count > 0 else 0
         else:
-            col_rdd = col_rdd.filter(not_null).map(lambda x: x.encode("utf-8")).cache()
-            min_value = col_rdd.sortBy(lambda x: x).take(1)
-            max_value = col_rdd.top(1)
-            data_types["min_value"] = min_value[0] if len(min_value) > 0 else None
-            data_types["max_value"] = max_value[0] if len(max_value) > 0 else None
+            col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE/TIME").map(lambda x: (str(x), parse(str(x)))).cache()
+            min_value = col_rdd.min(lambda x: x[1])
+            max_value = col_rdd.max(lambda x: x[1])
+            data_types["min_value"] = min_value[0] if min_value is not None else None
+            data_types["max_value"] = max_value[0] if max_value is not None else None
+        # identify candidate for keys
+        if col_type != "DATE/TIME" and number_distinct_values == number_empty_cells + number_non_empty_cells:
+            output["key_column_candidates"].append(header[i])
         # save data
         column = dict()
         column["column_name"] = header[i]

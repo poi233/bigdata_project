@@ -41,15 +41,15 @@ def get_food_data(data_dir, files_311):
     print("-------------------------------------------")
     print("Start Process Food 311 Problem Data")
     food_df_list = []
-    upper_boro = F.udf(str.upper)
+    upper_boro = F.udf(lambda x: x.upper() if x != 'unspecified' else 'null')
     for file in files_311:
         full_file = data_dir + file + ".tsv.gz"
         opendata_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(full_file)
         food_df = opendata_df.select("Created Date",
-                                     "Borough") \
+                                     "Borough", "Complaint Type") \
             .filter("`Complaint Type` like '%Food%'")
         oldColumns = food_df.schema.names
-        newColumns = ["date", "borough"]
+        newColumns = ["date", "borough", "type"]
         for i in range(len(oldColumns)):
             food_df = food_df.withColumnRenamed(oldColumns[i], newColumns[i])
         food_df = food_df.withColumn("borough", upper_boro(food_df.borough))
@@ -64,10 +64,10 @@ def get_res_inspect_data(data_dir, file_res_inspect):
     print("-------------------------------------------")
     print("Start Process Restaurant Inspection Data")
     full_file = data_dir + file_res_inspect + ".tsv.gz"
+    upper_boro = F.udf(lambda x: x.upper() if x != 'unspecified' else 'null')
     opendata_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(full_file)
     res_df = opendata_df.select("BORO", "INSPECTION DATE", "GRADE").where("ACTION not like 'No violations%'")
     res_df = res_df.withColumnRenamed("INSPECTION DATE", "DATE")
-    upper_boro = F.udf(str.upper)
     res_df = res_df.withColumn("BORO", upper_boro(res_df.BORO))
     res_df.toPandas().to_csv("./task3_data/food_inspect.csv", encoding='utf-8')
     print("%s processed with %s records" % (file_res_inspect, res_df.count()))
