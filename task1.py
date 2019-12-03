@@ -189,7 +189,7 @@ if __name__ == "__main__":
     has_not_done = True
     while has_not_done:
         not_done = 0
-        for i in range(len(data_sets)):
+        for i in range(offset + 1):
             if data_sets[i + offset] in big_datasets:
                 continue
             if i + offset >= len(data_sets):
