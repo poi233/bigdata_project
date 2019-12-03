@@ -76,10 +76,13 @@ def profile(dataset):
     output["dataset_name"] = dataset
     output["columns"] = []
     output["key_column_candidates"] = []
-    dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
-        data_dir + dataset + ".tsv.gz")
+    dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(data_dir + dataset + ".tsv.gz")
     print("%s data load ok" % dataset)
-    if dataset_df.count() > MIN_SIZE:
+    df_count = dataset_df.count()
+    if df_count == 0:
+        print("%s has no data" % dataset)
+        return
+    if df_count > MIN_SIZE:
         print("%s is a large dataset skip now" % dataset)
         return
     columns = dataset_df.columns
@@ -182,10 +185,7 @@ if __name__ == "__main__":
     # run profile for each dataset
     offset = int(len(data_sets) / 3)
     my_dir = '/home/yp1207/project_pycharm/task1_data/'
-    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh',
-                    'w7fs-fd9i', 't29m-gskq', 'q5mz-t52e', '2upf-qytp',
-                    'sxmw-f24h', 'erm2-nwe9', '3rfa-3xsf', 'uzcy-9puk',
-                    'aiww-p3af', 'hy4q-igkk', 'vwpc-kje2']
+    big_datasets = []
     has_not_done = True
     while has_not_done:
         not_done = 0
