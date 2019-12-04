@@ -58,7 +58,7 @@ def get_type_from_col_name(x):
         return 'lat/lon'
     # Zip code
     if 'zip' in col:
-        return 'zip'
+        return 'zip_code'
     # Borough
     if 'boro' in col:
         return 'borough'
