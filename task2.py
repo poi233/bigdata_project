@@ -109,6 +109,7 @@ def check_semantic_type(x):
         return predict_types
     x = str(x).strip()
     # Person Name
+
     # Business Name
     # Phone Number
     if is_phone(x):
