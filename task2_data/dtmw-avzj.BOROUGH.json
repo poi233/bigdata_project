@@ -1,1 +1,27 @@
-{"dtmw-avzj": {"BOROUGH": ["Manhattan", "Manhattan", "Brooklyn", "Queens", "Queens", "Staten Island", "Brooklyn", "Queens", "Queens", "Staten Island", "Bronx", "Bronx", "Brooklyn", "Brooklyn", "Brooklyn", "Queens", "Queens", "Brooklyn", "Queens", "Queens", "Staten Island"]}}
+{
+  "dtmw-avzj": {
+    "BOROUGH": [
+      "Manhattan",
+      "Manhattan",
+      "Brooklyn",
+      "Queens",
+      "Queens",
+      "Staten Island",
+      "Brooklyn",
+      "Queens",
+      "Queens",
+      "Staten Island",
+      "Bronx",
+      "Bronx",
+      "Brooklyn",
+      "Brooklyn",
+      "Brooklyn",
+      "Queens",
+      "Queens",
+      "Brooklyn",
+      "Queens",
+      "Queens",
+      "Staten Island"
+    ]
+  }
+}
