@@ -171,16 +171,9 @@ def is_website(x):
 
 
 def init_files():
-    count = 0
-    data = dict()
     with open('cluster2.txt') as file:
         origins = [file_name.strip()[1:-1] for file_name in file.readline().split(",")]
-        for origin in origins:
-            if origin.split(".")[0] not in data:
-                data[origin.split(".")[0]] = []
-            data[origin.split(".")[0]].append(origin.split(".")[1])
-            count += 1
-    return data
+    return list(set(origins))
 
 
 if __name__ == "__main__":
@@ -192,30 +185,31 @@ if __name__ == "__main__":
     # get file and dir
     # /user/hm74/NYCOpenData/c284-tqph.tsv.gz
     mkdir("./task2_data")
-    data_dir = "/user/hm74/NYCOpenData/"
+    data_dir = "/user/hm74/NYCColumns/"
     files = init_files()
     count = 1
     # find column dataset
     for file in files:
-        full_file = data_dir + file + ".tsv.gz"
-        opendata_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(full_file)
-        for column in files[file]:
-            pattern = re.compile('^' + column.replace("_", "(.*)") + '$')
-            # find column from dataset
-            for col in opendata_df.columns:
-                if re.match(pattern, col):
-                    print("-------------------------------------------------------------------------")
-                    print("%s %s start" % (file, col))
-                    column_df = opendata_df.select(col)
-                    # get column type according to name
-                    column_name_type = get_type_from_col_name(col)
-                    # get column type according to data
-                    all_types = column_df.rdd.map(lambda x: x[0]) \
-                        .flatMap(check_semantic_type) \
-                        .reduceByKey(lambda a, b: a + b) \
-                        .sortBy(lambda x: -x[1])
-                    column_data_type = all_types.map(lambda x: x[0]).collect()
-                    # save and print results
-                    print('column_name_type = %s' % column_name_type)
-                    print('column_data_type = %s' % column_data_type)
-                    print('column_type_summary = %s' % str(all_types.collect()))
+        full_file = data_dir + file
+        print(full_file)
+        # opendata_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(full_file)
+        # for column in files[file]:
+        #     pattern = re.compile('^' + column.replace("_", "(.*)") + '$')
+        #     # find column from dataset
+        #     for col in opendata_df.columns:
+        #         if re.match(pattern, col):
+        #             print("-------------------------------------------------------------------------")
+        #             print("%s %s start" % (file, col))
+        #             column_df = opendata_df.select(col)
+        #             # get column type according to name
+        #             column_name_type = get_type_from_col_name(col)
+        #             # get column type according to data
+        #             all_types = column_df.rdd.map(lambda x: x[0]) \
+        #                 .flatMap(check_semantic_type) \
+        #                 .reduceByKey(lambda a, b: a + b) \
+        #                 .sortBy(lambda x: -x[1])
+        #             column_data_type = all_types.map(lambda x: x[0]).collect()
+        #             # save and print results
+        #             print('column_name_type = %s' % column_name_type)
+        #             print('column_data_type = %s' % column_data_type)
+        #             print('column_type_summary = %s' % str(all_types.collect()))
