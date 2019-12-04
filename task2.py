@@ -194,11 +194,11 @@ if __name__ == "__main__":
         print("%s %s start" % (dataset, column))
         # get column type according to name
         column_name_type = get_type_from_col_name(column)
-        file_rdd = sc.textFile(full_file)\
-            .map(lambda x: (x.split("\t")[0], int(x.split("\t")[1])))\
+        file_rdd = sc.textFile(full_file)
+        type_rdd = file_rdd.map(lambda x: (x.split("\t")[0], int(x.split("\t")[1])))\
             .flatMap(check_semantic_type)\
             .reduceByKey(lambda a, b: a + b)\
-            .sortBy(lambda x: -x[1])
-        column_data_type = file_rdd.collect()
+            .sortBy(lambda x: -x[1]).cache()
+        column_data_type = type_rdd.filter(lambda x: x[0] != 'other').collect()
         print(column_name_type)
         print(column_data_type)
