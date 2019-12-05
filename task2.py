@@ -2,6 +2,7 @@
 import json
 import os
 import re
+import difflib
 
 from pyspark import SparkContext
 

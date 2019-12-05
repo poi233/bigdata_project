@@ -187,22 +187,23 @@ if __name__ == "__main__":
     # run profile for each dataset
     offset = int(len(data_sets) / 3)
     my_dir = '/home/yp1207/project_pycharm/task1_data/'
-    big_datasets = ['avz8-mqzz', '5gj9-2kzx', 'biws-g3hs', 'am94-epxh', 't29m-gskq', 'q5mz-t52e', '2upf-qytp', 'a2nx-4u46', 'k397-673e', 'vwpc-kje2'
-                    'erm2-nwe9', '3rfa-3xsf', 'kwte-dppd', 'k2wr-xdxp', 'mrey-ykjt', 'cgd2-a96k', 'mu33-54em', 'sxmw-f24h', 'x2ak-gjxj', 's5mq-f5ie',
-                    'hnj4-7uii', 'ipu4-2q9a', 'paab-n3s5', 'paab-n3s5']
     has_not_done = True
-    while has_not_done:
-        not_done = 0
-        for i in range(offset + 1):
-            if data_sets[i + offset] in big_datasets:
-                continue
-            if i + offset >= len(data_sets):
-                break
-            if not os.path.exists(my_dir + data_sets[i + offset] + ".json"):
-                not_done += 1
-                profile(data_sets[i + offset])
-            else:
-                print("%s already processed" % data_sets[i + offset])
-        if not_done == 0:
-            has_not_done = False
-        MIN_SIZE += 500000
+    with open("./error_dataset.txt", 'a') as error_file:
+        while has_not_done:
+            not_done = 0
+            for i in range(offset + 1):
+                if i + offset * 2 >= len(data_sets):
+                    break
+                if not os.path.exists(my_dir + data_sets[i + offset * 2] + ".json"):
+                    not_done += 1
+                    try:
+                        profile(data_sets[i + offset * 2])
+                    except:
+                        error_file.write("%s has error\n" % data_sets[i + offset * 2])
+                        print("%s has error\n" % data_sets[i + offset * 2])
+                else:
+                    print("%s already processed" % data_sets[i + offset])
+            if not_done == 0:
+                has_not_done = False
+            MIN_SIZE += 500000
+
