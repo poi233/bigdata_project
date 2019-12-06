@@ -1,0 +1,5706 @@
+{
+  "cvh6-nmyi.SCHOOL.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1546
+      },
+      {
+        "semantic_type": "other",
+        "count": 258
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 45
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 43
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 21
+      }
+    ]
+  },
+  "bbs3-q5us.ZIP.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 138671
+      },
+      {
+        "semantic_type": "other",
+        "count": 5813
+      }
+    ]
+  },
+  "kiv2-tbus.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 6919675
+      },
+      {
+        "semantic_type": "color",
+        "count": 3227282
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 349986
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 258050
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 13
+      },
+      {
+        "semantic_type": "borough",
+        "count": 6
+      },
+      {
+        "semantic_type": "city",
+        "count": 6
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2
+      }
+    ]
+  },
+  "sqcr-6mww.Location.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 306158
+      }
+    ]
+  },
+  "vrn4-2abs.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1503
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 436
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 364
+      }
+    ]
+  },
+  "s27g-2w3u.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1548
+      },
+      {
+        "semantic_type": "other",
+        "count": 215
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 46
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 40
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 20
+      }
+    ]
+  },
+  "jt7v-77mi.Vehicle_Make.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 8784912
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 242928
+      },
+      {
+        "semantic_type": "color",
+        "count": 7247
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1978
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 25
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 8
+      },
+      {
+        "semantic_type": "city",
+        "count": 6
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 5
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2
+      }
+    ]
+  },
+  "735p-zed8.CANDMI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 116500
+      }
+    ]
+  },
+  "7btz-mnc8.Provider_First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1891
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 17
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 13
+      },
+      {
+        "semantic_type": "city",
+        "count": 6
+      },
+      {
+        "semantic_type": "color",
+        "count": 2
+      }
+    ]
+  },
+  "niy5-4j7q.MANHATTAN___COOPERATIVES_COMPARABLE_PROPERTIES___Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2646
+      }
+    ]
+  },
+  "vw9i-7mzq.interest4.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 52
+      }
+    ]
+  },
+  "2sps-j9st.PERSON_LAST_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 49184
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1167
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 719
+      },
+      {
+        "semantic_type": "color",
+        "count": 401
+      },
+      {
+        "semantic_type": "city",
+        "count": 393
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 203
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 26
+      },
+      {
+        "semantic_type": "address",
+        "count": 7
+      }
+    ]
+  },
+  "uzcy-9puk.Incident_Zip.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 1746426
+      },
+      {
+        "semantic_type": "other",
+        "count": 459
+      }
+    ]
+  },
+  "f3cg-u8bv.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1750
+      }
+    ]
+  },
+  "mdcw-n682.First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 4803
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 42
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 26
+      },
+      {
+        "semantic_type": "city",
+        "count": 22
+      },
+      {
+        "semantic_type": "color",
+        "count": 8
+      }
+    ]
+  },
+  "6anw-twe4.FirstName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 9860
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 141
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 115
+      },
+      {
+        "semantic_type": "city",
+        "count": 19
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      }
+    ]
+  },
+  "crc3-tcnm.BOROUGH.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 12438
+      }
+    ]
+  },
+  "2bmr-jdsv.DBA.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "business_name",
+        "count": 14672
+      },
+      {
+        "semantic_type": "other",
+        "count": 9698
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 595
+      }
+    ]
+  },
+  "4twk-9yq2.CrossStreet2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 36719
+      },
+      {
+        "semantic_type": "other",
+        "count": 2783
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1235
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 466
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 321
+      },
+      {
+        "semantic_type": "address",
+        "count": 6
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 4
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      }
+    ]
+  },
+  "pqg4-dm6b.Address1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 520
+      },
+      {
+        "semantic_type": "address",
+        "count": 504
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 37
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 31
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 10
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2
+      }
+    ]
+  },
+  "hy4q-igkk.Cross_Street_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1282325
+      },
+      {
+        "semantic_type": "other",
+        "count": 72900
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 33295
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 18313
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 8416
+      },
+      {
+        "semantic_type": "city",
+        "count": 20
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 8
+      },
+      {
+        "semantic_type": "address",
+        "count": 7
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 2
+      }
+    ]
+  },
+  "myei-c3fa.Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 21772
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 6216
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2991
+      },
+      {
+        "semantic_type": "city",
+        "count": 980
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 97
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 21
+      }
+    ]
+  },
+  "weg5-33pj.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1262
+      },
+      {
+        "semantic_type": "school_level",
+        "count": 238
+      }
+    ]
+  },
+  "gez6-674h.BORO.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 3433
+      }
+    ]
+  },
+  "h9gi-nx95.VEHICLE_TYPE_CODE_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1520424
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 29235
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 14561
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 37
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 26
+      },
+      {
+        "semantic_type": "color",
+        "count": 9
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "ipu4-2q9a.Site_Safety_Mgr_s_First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 27869
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 449
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 313
+      },
+      {
+        "semantic_type": "city",
+        "count": 54
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 15
+      }
+    ]
+  },
+  "s9d3-x4fz.ZIP.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 117207
+      },
+      {
+        "semantic_type": "other",
+        "count": 5021
+      }
+    ]
+  },
+  "tg3t-nh4h.BusinessName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 25274
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 9784
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 634
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 530
+      },
+      {
+        "semantic_type": "color",
+        "count": 48
+      },
+      {
+        "semantic_type": "city",
+        "count": 36
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 25
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 9
+      },
+      {
+        "semantic_type": "address",
+        "count": 8
+      }
+    ]
+  },
+  "yrf7-4wry.COMPARABLE_RENTAL___2___Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 156
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 105
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 74
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 14
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      }
+    ]
+  },
+  "4hiy-398i.CORE_SUBJECT___MS_CORE_and__09_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 3110
+      }
+    ]
+  },
+  "qgea-i56i.PREM_TYP_DESC.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 3859396
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2107869
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 2100852
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 240614
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 167447
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 87841
+      }
+    ]
+  },
+  "kj4p-ruqc.StreetName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 320033
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 6745
+      },
+      {
+        "semantic_type": "other",
+        "count": 5421
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2974
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1584
+      },
+      {
+        "semantic_type": "address",
+        "count": 10
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "faiq-9dfq.Vehicle_Body_Type.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 9740343
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1677258
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 104
+      },
+      {
+        "semantic_type": "color",
+        "count": 34
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 8
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 1
+      }
+    ]
+  },
+  "fbaw-uq4e.Location_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 3112
+      }
+    ]
+  },
+  "7yay-m4ae.AGENCY_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1328
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 144
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 16
+      }
+    ]
+  },
+  "2v9c-2k7f.DBA.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2824
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2642
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 173
+      }
+    ]
+  },
+  "dtmw-avzj.BOROUGH.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 47
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 40
+      },
+      {
+        "semantic_type": "city",
+        "count": 25
+      }
+    ]
+  },
+  "bty7-2jhb.Site_Safety_Mgr_s_Last_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 10672
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 92
+      },
+      {
+        "semantic_type": "color",
+        "count": 49
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 28
+      },
+      {
+        "semantic_type": "city",
+        "count": 19
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 3
+      }
+    ]
+  },
+  "va74-3m6c.company_phone.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 537
+      },
+      {
+        "semantic_type": "other",
+        "count": 7
+      }
+    ]
+  },
+  "uzcy-9puk.Street_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1377364
+      },
+      {
+        "semantic_type": "other",
+        "count": 49751
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 47045
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 16960
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 13967
+      },
+      {
+        "semantic_type": "address",
+        "count": 160
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 69
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 26
+      },
+      {
+        "semantic_type": "city",
+        "count": 9
+      }
+    ]
+  },
+  "q5za-zqz7.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1649
+      }
+    ]
+  },
+  "8k4x-9mp5.Last_Name__only_2014_15_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 4795
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 51
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 49
+      },
+      {
+        "semantic_type": "city",
+        "count": 26
+      },
+      {
+        "semantic_type": "color",
+        "count": 23
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 7
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1
+      }
+    ]
+  },
+  "jz4z-kudi.Violation_Location__City_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 7934985
+      },
+      {
+        "semantic_type": "borough",
+        "count": 6801540
+      },
+      {
+        "semantic_type": "city",
+        "count": 5520264
+      },
+      {
+        "semantic_type": "other",
+        "count": 2115198
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 200765
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 4355
+      },
+      {
+        "semantic_type": "color",
+        "count": 1071
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 886
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 22
+      },
+      {
+        "semantic_type": "address",
+        "count": 1
+      }
+    ]
+  },
+  "sqcr-6mww.Park_Facility_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1115468
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2818
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 99
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 76
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 21
+      }
+    ]
+  },
+  "72ss-25qh.Borough.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 520
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 493
+      },
+      {
+        "semantic_type": "city",
+        "count": 202
+      }
+    ]
+  },
+  "t8hj-ruu2.First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 81895
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1248
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 780
+      },
+      {
+        "semantic_type": "city",
+        "count": 323
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 28
+      },
+      {
+        "semantic_type": "color",
+        "count": 27
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1
+      }
+    ]
+  },
+  "8eux-rfe8.INPUT_1_Borough.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 1293
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1265
+      },
+      {
+        "semantic_type": "city",
+        "count": 536
+      }
+    ]
+  },
+  "erm2-nwe9.Park_Facility_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 21440992
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 108946
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 17722
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 5557
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2275
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 19
+      },
+      {
+        "semantic_type": "city",
+        "count": 10
+      },
+      {
+        "semantic_type": "address",
+        "count": 1
+      }
+    ]
+  },
+  "3btx-p4av.COMPARABLE_RENTAL___1__Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2631
+      }
+    ]
+  },
+  "sv2w-rv3k.BORO.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 4604868
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 4462533
+      },
+      {
+        "semantic_type": "city",
+        "count": 1892798
+      }
+    ]
+  },
+  "4qii-5cz9.CORE_SUBJECT___MS_CORE_and__09_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2347
+      }
+    ]
+  },
+  "i8ys-e4pm.CORE_COURSE_9_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 16428
+      }
+    ]
+  },
+  "dm9a-ab7w.STREET_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 114766
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 4494
+      },
+      {
+        "semantic_type": "other",
+        "count": 3560
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2341
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 812
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 4
+      }
+    ]
+  },
+  "kwmq-dbub.CITY.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "city",
+        "count": 26378
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 25894
+      },
+      {
+        "semantic_type": "borough",
+        "count": 21346
+      },
+      {
+        "semantic_type": "other",
+        "count": 13830
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1201
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 41
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 34
+      },
+      {
+        "semantic_type": "color",
+        "count": 4
+      }
+    ]
+  },
+  "9b9u-8989.DBA.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 3629
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1448
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 88
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 66
+      },
+      {
+        "semantic_type": "address",
+        "count": 21
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 14
+      },
+      {
+        "semantic_type": "color",
+        "count": 5
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      }
+    ]
+  },
+  "vhah-kvpj.Borough.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 331
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 321
+      },
+      {
+        "semantic_type": "city",
+        "count": 118
+      },
+      {
+        "semantic_type": "other",
+        "count": 12
+      }
+    ]
+  },
+  "cvh6-nmyi.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1806
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 521
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 408
+      },
+      {
+        "semantic_type": "other",
+        "count": 11
+      }
+    ]
+  },
+  "4n2j-ut8i.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1664
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 466
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 386
+      },
+      {
+        "semantic_type": "other",
+        "count": 13
+      }
+    ]
+  },
+  "3aka-ggej.CORE_SUBJECT___MS_CORE_and__09_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2363
+      }
+    ]
+  },
+  "m59i-mqex.QUEENS_CONDOMINIUM_PROPERTY_Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 251
+      }
+    ]
+  },
+  "rmv8-86p4.BROOKLYN_CONDOMINIUM_PROPERTY_Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 396
+      }
+    ]
+  },
+  "mdcw-n682.Middle_Initial.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 594
+      }
+    ]
+  },
+  "mdcw-n682.Agency_Website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2017
+      },
+      {
+        "semantic_type": "website",
+        "count": 1999
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 258
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2
+      }
+    ]
+  },
+  "myei-c3fa.Neighborhood_2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 21758
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 5641
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 3163
+      },
+      {
+        "semantic_type": "city",
+        "count": 1156
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 97
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 23
+      }
+    ]
+  },
+  "cvse-perd.Agency_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 48
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 9
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 1
+      }
+    ]
+  },
+  "ruce-cnp6.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 23392
+      }
+    ]
+  },
+  "e9xc-u3ds.ZIP.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 43340
+      },
+      {
+        "semantic_type": "other",
+        "count": 2650
+      }
+    ]
+  },
+  "fb26-34vu.CORE_SUBJECT__MS_CORE_and_9_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 667
+      }
+    ]
+  },
+  "5uac-w243.PREM_TYP_DESC.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 145571
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 60220
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 59992
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 8766
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 4334
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2570
+      }
+    ]
+  },
+  "ci93-uc8s.Vendor_DBA.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 949
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 210
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 5
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      },
+      {
+        "semantic_type": "website",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "bs8b-p36w.LOCATION.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 32997
+      }
+    ]
+  },
+  "n3p6-zve2.website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "website",
+        "count": 412
+      },
+      {
+        "semantic_type": "other",
+        "count": 17
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 6
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 4
+      }
+    ]
+  },
+  "9z9b-6hvk.Borough.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 84
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 82
+      },
+      {
+        "semantic_type": "city",
+        "count": 13
+      },
+      {
+        "semantic_type": "other",
+        "count": 1
+      }
+    ]
+  },
+  "ptev-4hud.City.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 179179
+      },
+      {
+        "semantic_type": "borough",
+        "count": 149281
+      },
+      {
+        "semantic_type": "city",
+        "count": 128821
+      },
+      {
+        "semantic_type": "other",
+        "count": 49892
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 11476
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 143
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 112
+      },
+      {
+        "semantic_type": "color",
+        "count": 40
+      },
+      {
+        "semantic_type": "address",
+        "count": 2
+      }
+    ]
+  },
+  "yayv-apxh.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1352
+      },
+      {
+        "semantic_type": "school_level",
+        "count": 511
+      }
+    ]
+  },
+  "yjub-udmw.Location__Lat__Long_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 3150
+      }
+    ]
+  },
+  "ic3t-wcy2.Applicant_s_First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1650069
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 25710
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 16618
+      },
+      {
+        "semantic_type": "city",
+        "count": 5368
+      },
+      {
+        "semantic_type": "color",
+        "count": 199
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 13
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 11
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 2
+      }
+    ]
+  },
+  "aiww-p3af.Location.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 387620
+      }
+    ]
+  },
+  "wks3-66bn.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 888
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 614
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 43
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 38
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 18
+      }
+    ]
+  },
+  "3rfa-3xsf.Street_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1324554
+      },
+      {
+        "semantic_type": "other",
+        "count": 48611
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 46785
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 16534
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 12409
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 88
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 47
+      },
+      {
+        "semantic_type": "address",
+        "count": 44
+      },
+      {
+        "semantic_type": "city",
+        "count": 6
+      }
+    ]
+  },
+  "n2mv-q2ia.Address_1__self_reported_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 29321
+      },
+      {
+        "semantic_type": "other",
+        "count": 4315
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1414
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 683
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 227
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 1
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "2sps-j9st.PERSON_FIRST_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 49821
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 522
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 489
+      },
+      {
+        "semantic_type": "city",
+        "count": 193
+      },
+      {
+        "semantic_type": "color",
+        "count": 54
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 8
+      }
+    ]
+  },
+  "cspg-yi7g.PHONE.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 720405
+      },
+      {
+        "semantic_type": "other",
+        "count": 1579
+      }
+    ]
+  },
+  "mu46-p9is.Location.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 217691
+      }
+    ]
+  },
+  "pdpg-nn8i.CORE_SUBJECT___MS_CORE_and__9_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 28645
+      }
+    ]
+  },
+  "uzcy-9puk.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1860393
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 7275
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 7191
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 473
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 324
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 3
+      }
+    ]
+  },
+  "pqg4-dm6b.Phone.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 1093
+      }
+    ]
+  },
+  "d3ge-anaz.CORE_COURSE__MS_CORE_and_9_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 24012
+      }
+    ]
+  },
+  "n2s5-fumm.BRONX_CONDOMINIUM_PROPERTY_Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 30
+      },
+      {
+        "semantic_type": "other",
+        "count": 16
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 14
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1
+      }
+    ]
+  },
+  "3btx-p4av.MANHATTAN___COOPERATIVES_COMPARABLE_PROPERTIES___Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2631
+      }
+    ]
+  },
+  "urc8-8bjy.BORO.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 3081
+      }
+    ]
+  },
+  "aiww-p3af.Incident_Zip.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 1745830
+      },
+      {
+        "semantic_type": "other",
+        "count": 441
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 1
+      }
+    ]
+  },
+  "ahjc-fdu3.PRINCIPAL_PHONE_NUMBER.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 1809
+      },
+      {
+        "semantic_type": "other",
+        "count": 9
+      }
+    ]
+  },
+  "r4c5-ndkx._Phone.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 197183
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 22686
+      }
+    ]
+  },
+  "crc3-tcnm.CORE_SUBJECT.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 12438
+      }
+    ]
+  },
+  "i8ys-e4pm.CORE_SUBJECT_9_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 16428
+      }
+    ]
+  },
+  "qcdj-rwhu.BUSINESS_NAME2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 806
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 211
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 17
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 9
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  },
+  "jhjm-vsp8.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1277
+      }
+    ]
+  },
+  "s3k6-pzi2.interest5.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 38
+      }
+    ]
+  },
+  "erm2-nwe9.Landmark.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 286364
+      },
+      {
+        "semantic_type": "other",
+        "count": 15561
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 11887
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 3451
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2733
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 19
+      },
+      {
+        "semantic_type": "borough",
+        "count": 5
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      },
+      {
+        "semantic_type": "address",
+        "count": 1
+      }
+    ]
+  },
+  "3miu-myq2.COMPARABLE_RENTAL___2__Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 153
+      },
+      {
+        "semantic_type": "other",
+        "count": 145
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 104
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 34
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      }
+    ]
+  },
+  "ccgt-mp8e.Borough.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 650
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 520
+      },
+      {
+        "semantic_type": "city",
+        "count": 260
+      }
+    ]
+  },
+  "kiv2-tbus.Vehicle_Make.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 10325461
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 234508
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2351
+      },
+      {
+        "semantic_type": "color",
+        "count": 946
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 26
+      },
+      {
+        "semantic_type": "city",
+        "count": 14
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 13
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 4
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2
+      }
+    ]
+  },
+  "brga-xeqy.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 285
+      }
+    ]
+  },
+  "qpm9-j523.org_neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 40
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 26
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 7
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "mq9d-au8i.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 885
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 671
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 48
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 37
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 24
+      }
+    ]
+  },
+  "uq7m-95z8.interest1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 427
+      }
+    ]
+  },
+  "sxmw-f24h.Cross_Street_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1367148
+      },
+      {
+        "semantic_type": "other",
+        "count": 76506
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 34639
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 19621
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 8243
+      },
+      {
+        "semantic_type": "city",
+        "count": 42
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 10
+      },
+      {
+        "semantic_type": "address",
+        "count": 7
+      },
+      {
+        "semantic_type": "borough",
+        "count": 4
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  },
+  "i6b5-j7bu.TOSTREETNAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 55380
+      },
+      {
+        "semantic_type": "other",
+        "count": 8494
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2810
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 916
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 538
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 5
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "vw9i-7mzq.interest1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 435
+      }
+    ]
+  },
+  "dpm2-m9mq.owner_city.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "city",
+        "count": 175372
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 42633
+      },
+      {
+        "semantic_type": "borough",
+        "count": 36559
+      },
+      {
+        "semantic_type": "other",
+        "count": 10522
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 957
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 111
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 51
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 46
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  },
+  "vwxi-2r5k.CORE_SUBJECT.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2375
+      }
+    ]
+  },
+  "8gpu-s594.SCHOOL_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 11090
+      },
+      {
+        "semantic_type": "other",
+        "count": 1026
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 61
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 60
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 39
+      }
+    ]
+  },
+  "mdcw-n682.Last_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 4683
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 77
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 59
+      },
+      {
+        "semantic_type": "color",
+        "count": 45
+      },
+      {
+        "semantic_type": "city",
+        "count": 38
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 17
+      }
+    ]
+  },
+  "4pt5-3vv4.Location.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 558171
+      }
+    ]
+  },
+  "8586-3zfm.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 2560
+      },
+      {
+        "semantic_type": "other",
+        "count": 212
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 75
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 15
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 14
+      }
+    ]
+  },
+  "iz2q-9x8d.Owner_s__Phone__.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 5956
+      }
+    ]
+  },
+  "bjuu-44hx.DVV_MAKE.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 672482
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 15527
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 593
+      },
+      {
+        "semantic_type": "color",
+        "count": 132
+      },
+      {
+        "semantic_type": "city",
+        "count": 35
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 18
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 7
+      },
+      {
+        "semantic_type": "borough",
+        "count": 2
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "ph7v-u5f3.WEBSITE.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "website",
+        "count": 35
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 4
+      }
+    ]
+  },
+  "hy4q-igkk.Park_Facility_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1781740
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 7476
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 333
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 167
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 60
+      }
+    ]
+  },
+  "735p-zed8.CITY.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "city",
+        "count": 97788
+      },
+      {
+        "semantic_type": "borough",
+        "count": 87303
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 86702
+      },
+      {
+        "semantic_type": "other",
+        "count": 28315
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2586
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 284
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 140
+      },
+      {
+        "semantic_type": "color",
+        "count": 6
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "w9ak-ipjd.Applicant_Last_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 48575
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 500
+      },
+      {
+        "semantic_type": "color",
+        "count": 145
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 91
+      },
+      {
+        "semantic_type": "city",
+        "count": 77
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 18
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 4
+      }
+    ]
+  },
+  "922w-z7da.address_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 4238
+      },
+      {
+        "semantic_type": "other",
+        "count": 691
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 132
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 113
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 28
+      }
+    ]
+  },
+  "ph7v-u5f3.TOP_VEHICLE_MODELS___5.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 573
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 74
+      }
+    ]
+  },
+  "mjux-q9d4.SCHOOL.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1482
+      },
+      {
+        "semantic_type": "other",
+        "count": 248
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 42
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 42
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 19
+      }
+    ]
+  },
+  "ebkm-iyma.Street_Address.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 5454
+      },
+      {
+        "semantic_type": "other",
+        "count": 414
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 158
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 136
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 35
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2
+      }
+    ]
+  },
+  "vr8p-8shw.DVT_MAKE.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 73714
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2925
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 21
+      },
+      {
+        "semantic_type": "color",
+        "count": 9
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 3
+      }
+    ]
+  },
+  "ci93-uc8s.telephone.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 9323
+      },
+      {
+        "semantic_type": "other",
+        "count": 11
+      }
+    ]
+  },
+  "c284-tqph.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 7515466
+      },
+      {
+        "semantic_type": "color",
+        "count": 3785104
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 375465
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 308744
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 16
+      },
+      {
+        "semantic_type": "city",
+        "count": 10
+      },
+      {
+        "semantic_type": "borough",
+        "count": 9
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      }
+    ]
+  },
+  "vwxi-2r5k.BOROUGH.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2375
+      }
+    ]
+  },
+  "w9if-3pyn.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1798
+      },
+      {
+        "semantic_type": "other",
+        "count": 1157
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 249
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 132
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 88
+      },
+      {
+        "semantic_type": "address",
+        "count": 2
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1
+      }
+    ]
+  },
+  "956m-xy24.COMPARABLE_RENTAL_2__Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1002
+      }
+    ]
+  },
+  "rtws-c2ai.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1351
+      },
+      {
+        "semantic_type": "other",
+        "count": 208
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 50
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 39
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 24
+      }
+    ]
+  },
+  "dm9a-ab7w.AUTH_REP_LAST_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 32687
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 577
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 223
+      },
+      {
+        "semantic_type": "city",
+        "count": 146
+      },
+      {
+        "semantic_type": "color",
+        "count": 140
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 66
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 4
+      }
+    ]
+  },
+  "y4fw-iqfr.Address.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 5156
+      },
+      {
+        "semantic_type": "other",
+        "count": 894
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 293
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 125
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 41
+      }
+    ]
+  },
+  "jz4z-kudi.Respondent_Address__Zip_Code_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 12429371
+      },
+      {
+        "semantic_type": "other",
+        "count": 16663
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 3
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 3
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      }
+    ]
+  },
+  "s3zn-tf7c.QUEENS_CONDOMINIUM_PROPERTY_Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 186
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 125
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 42
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "9ck8-hj3u.PRINCIPAL_PHONE_NUMBER.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 1894
+      }
+    ]
+  },
+  "jt7v-77mi.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 5566966
+      },
+      {
+        "semantic_type": "color",
+        "count": 3187865
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 272953
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 265314
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 11
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      }
+    ]
+  },
+  "niy5-4j7q.COMPARABLE_RENTAL___2__Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2498
+      }
+    ]
+  },
+  "5mw2-hzqx.BROOKLYN_CONDOMINIUM_PROPERTY_Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 595
+      }
+    ]
+  },
+  "6rrm-vxj9.parkname.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "park_playground",
+        "count": 1015
+      },
+      {
+        "semantic_type": "other",
+        "count": 189
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 38
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 12
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 4
+      }
+    ]
+  },
+  "5cd6-v74i.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1398
+      },
+      {
+        "semantic_type": "other",
+        "count": 215
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 48
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 40
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 22
+      }
+    ]
+  },
+  "urzf-q2g5.Phone_Number.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 959
+      },
+      {
+        "semantic_type": "other",
+        "count": 3
+      }
+    ]
+  },
+  "ci93-uc8s.Website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "website",
+        "count": 6505
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 793
+      },
+      {
+        "semantic_type": "other",
+        "count": 111
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 25
+      }
+    ]
+  },
+  "s3k6-pzi2.interest1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 440
+      }
+    ]
+  },
+  "vx8i-nprf.MI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 310908
+      }
+    ]
+  },
+  "cgz5-877h.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1503
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 436
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 364
+      }
+    ]
+  },
+  "sxmw-f24h.Street_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1399979
+      },
+      {
+        "semantic_type": "other",
+        "count": 48521
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 47562
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 15406
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 13325
+      },
+      {
+        "semantic_type": "address",
+        "count": 544
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 44
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 27
+      },
+      {
+        "semantic_type": "city",
+        "count": 13
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      }
+    ]
+  },
+  "f42p-xqaa.BROOKLYN___COOPERATIVES_COMPARABLE_PROPERTIES___Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 962
+      }
+    ]
+  },
+  "3rfa-3xsf.Cross_Street_2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1294699
+      },
+      {
+        "semantic_type": "other",
+        "count": 70451
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 27620
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 19058
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 10767
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 91
+      },
+      {
+        "semantic_type": "city",
+        "count": 25
+      },
+      {
+        "semantic_type": "address",
+        "count": 5
+      },
+      {
+        "semantic_type": "borough",
+        "count": 3
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  },
+  "uqxv-h2se.independentwebsite.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 409
+      },
+      {
+        "semantic_type": "website",
+        "count": 58
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 6
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2
+      }
+    ]
+  },
+  "pdk7-puui.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 244
+      }
+    ]
+  },
+  "upwt-zvh3.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1655
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 473
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 399
+      },
+      {
+        "semantic_type": "other",
+        "count": 13
+      }
+    ]
+  },
+  "8u86-bviy.Address_1__self_reported_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 9639
+      },
+      {
+        "semantic_type": "other",
+        "count": 1697
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 660
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 243
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 81
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 1
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "emnd-d8ba.PRINCIPAL_PHONE_NUMBER.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 1750
+      }
+    ]
+  },
+  "t8hj-ruu2.Business_Phone_Number.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "phone_number",
+        "count": 65007
+      },
+      {
+        "semantic_type": "other",
+        "count": 94
+      }
+    ]
+  },
+  "vw9i-7mzq.interest3.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 71
+      }
+    ]
+  },
+  "6anw-twe4.LastName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 9789
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 113
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 102
+      },
+      {
+        "semantic_type": "city",
+        "count": 66
+      },
+      {
+        "semantic_type": "color",
+        "count": 39
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 21
+      }
+    ]
+  },
+  "uchs-jqh4.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1351
+      },
+      {
+        "semantic_type": "other",
+        "count": 208
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 50
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 39
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 24
+      }
+    ]
+  },
+  "uq7m-95z8.neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 261
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 120
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 35
+      },
+      {
+        "semantic_type": "city",
+        "count": 15
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 10
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1
+      }
+    ]
+  },
+  "52dp-yji6.Owner_First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 194323
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2672
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2564
+      },
+      {
+        "semantic_type": "city",
+        "count": 721
+      },
+      {
+        "semantic_type": "color",
+        "count": 277
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 138
+      },
+      {
+        "semantic_type": "address",
+        "count": 40
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 24
+      },
+      {
+        "semantic_type": "borough",
+        "count": 8
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "s79c-jgrm.City.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "city",
+        "count": 20491
+      },
+      {
+        "semantic_type": "borough",
+        "count": 20173
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 19191
+      },
+      {
+        "semantic_type": "other",
+        "count": 2669
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 279
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 41
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 20
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  },
+  "ydkf-mpxb.CrossStreetName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 96815
+      },
+      {
+        "semantic_type": "other",
+        "count": 82088
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2832
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1768
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1058
+      },
+      {
+        "semantic_type": "address",
+        "count": 25
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 4
+      }
+    ]
+  },
+  "w9ak-ipjd.City.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 16220
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 15825
+      },
+      {
+        "semantic_type": "city",
+        "count": 15529
+      },
+      {
+        "semantic_type": "borough",
+        "count": 8608
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1011
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 36
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 9
+      }
+    ]
+  },
+  "pvqr-7yc4.Vehicle_Make.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2287388
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 51666
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 197
+      },
+      {
+        "semantic_type": "color",
+        "count": 63
+      },
+      {
+        "semantic_type": "city",
+        "count": 4
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 2
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      }
+    ]
+  },
+  "qusa-igsv.CORE_SUBJECT___MS_CORE_and__09_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 569
+      }
+    ]
+  },
+  "a5qt-5jpu.STATEN_ISLAND_CONDOMINIUM_PROPERTY_Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 18
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 6
+      }
+    ]
+  },
+  "p937-wjvj.LOCATION.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 292794
+      }
+    ]
+  },
+  "4kpn-sezh.Website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 41
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 16
+      }
+    ]
+  },
+  "ic3t-wcy2.Zip.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 1686905
+      },
+      {
+        "semantic_type": "other",
+        "count": 10357
+      }
+    ]
+  },
+  "yahh-6yjc.School_Type.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1722
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 484
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 406
+      }
+    ]
+  },
+  "en2c-j6tw.BRONX_CONDOMINIUM_PROPERTY_Building_Classification.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 48
+      }
+    ]
+  },
+  "7btz-mnc8.Provider_Last_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1899
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 19
+      },
+      {
+        "semantic_type": "color",
+        "count": 8
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 8
+      },
+      {
+        "semantic_type": "city",
+        "count": 4
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 3
+      }
+    ]
+  },
+  "qu8g-sxqf.First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 236837
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1674
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1512
+      },
+      {
+        "semantic_type": "city",
+        "count": 900
+      },
+      {
+        "semantic_type": "color",
+        "count": 558
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 56
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 3
+      }
+    ]
+  },
+  "4d7f-74pe.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 76913
+      }
+    ]
+  },
+  "a2pm-dj2w.Borough.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "borough",
+        "count": 5
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      }
+    ]
+  },
+  "jz4z-kudi.Respondent_Address__City_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 6130457
+      },
+      {
+        "semantic_type": "borough",
+        "count": 5242231
+      },
+      {
+        "semantic_type": "city",
+        "count": 3870702
+      },
+      {
+        "semantic_type": "other",
+        "count": 1431455
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 150186
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 3134
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 2459
+      },
+      {
+        "semantic_type": "color",
+        "count": 251
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 15
+      },
+      {
+        "semantic_type": "address",
+        "count": 5
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 2
+      },
+      {
+        "semantic_type": "school_level",
+        "count": 2
+      }
+    ]
+  },
+  "as69-ew8f.TruckMake.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 118011
+      },
+      {
+        "semantic_type": "color",
+        "count": 1444
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 79
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      }
+    ]
+  },
+  "sxx4-xhzg.Park_Site_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "park_playground",
+        "count": 253
+      },
+      {
+        "semantic_type": "other",
+        "count": 239
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 33
+      },
+      {
+        "semantic_type": "address",
+        "count": 13
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 9
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 3
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 1
+      }
+    ]
+  },
+  "6bgk-3dad.RESPONDENT_CITY.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 760793
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 375467
+      },
+      {
+        "semantic_type": "borough",
+        "count": 268443
+      },
+      {
+        "semantic_type": "city",
+        "count": 228944
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 17072
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1360
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 720
+      },
+      {
+        "semantic_type": "color",
+        "count": 82
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 4
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2
+      }
+    ]
+  },
+  "dm9a-ab7w.AUTH_REP_FIRST_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 33254
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 445
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 295
+      },
+      {
+        "semantic_type": "city",
+        "count": 96
+      },
+      {
+        "semantic_type": "color",
+        "count": 25
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 15
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 3
+      }
+    ]
+  },
+  "ipu4-2q9a.Site_Safety_Mgr_s_Last_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 27918
+      },
+      {
+        "semantic_type": "color",
+        "count": 425
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 203
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 95
+      },
+      {
+        "semantic_type": "city",
+        "count": 63
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 3
+      }
+    ]
+  },
+  "2bnn-yakx.Vehicle_Body_Type.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 9348003
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1411995
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 305
+      },
+      {
+        "semantic_type": "color",
+        "count": 36
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 6
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "cyfw-hfqk.STATEN_ISLAND_CONDOMINIUM_PROPERTY_Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 18
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 6
+      }
+    ]
+  },
+  "2bnn-yakx.Vehicle_Make.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 10491086
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 236609
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1594
+      },
+      {
+        "semantic_type": "color",
+        "count": 641
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 27
+      },
+      {
+        "semantic_type": "city",
+        "count": 14
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 10
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 7
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2
+      }
+    ]
+  },
+  "a9md-ynri.MI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 798422
+      }
+    ]
+  },
+  "w9ak-ipjd.Owner_s_Business_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 31575
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 17613
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 92
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 69
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 57
+      },
+      {
+        "semantic_type": "address",
+        "count": 2
+      }
+    ]
+  },
+  "72ss-25qh.Agency_ID.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 550
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 36
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 6
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 4
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 3
+      }
+    ]
+  },
+  "tqtj-sjs8.FromStreetName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 8497182
+      },
+      {
+        "semantic_type": "other",
+        "count": 479254
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 167337
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 136768
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 79476
+      },
+      {
+        "semantic_type": "address",
+        "count": 4944
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 158
+      },
+      {
+        "semantic_type": "city",
+        "count": 8
+      }
+    ]
+  },
+  "k3cd-yu9d.CANDMI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 40985
+      }
+    ]
+  },
+  "xck4-5xd5.website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1292
+      },
+      {
+        "semantic_type": "website",
+        "count": 150
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 30
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 12
+      }
+    ]
+  },
+  "xubg-57si.OWNER_BUS_STREET_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 15358
+      },
+      {
+        "semantic_type": "other",
+        "count": 4513
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 976
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 659
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 267
+      },
+      {
+        "semantic_type": "borough",
+        "count": 3
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 3
+      }
+    ]
+  },
+  "hy4q-igkk.Intersection_Street_2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 357792
+      },
+      {
+        "semantic_type": "other",
+        "count": 14322
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 10640
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 6136
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2714
+      },
+      {
+        "semantic_type": "address",
+        "count": 68
+      },
+      {
+        "semantic_type": "city",
+        "count": 27
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 17
+      },
+      {
+        "semantic_type": "borough",
+        "count": 12
+      }
+    ]
+  },
+  "s3k6-pzi2.website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "website",
+        "count": 331
+      },
+      {
+        "semantic_type": "other",
+        "count": 109
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 7
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 4
+      }
+    ]
+  },
+  "6je4-4x7e.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1806
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 521
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 408
+      },
+      {
+        "semantic_type": "other",
+        "count": 11
+      }
+    ]
+  },
+  "dm9a-ab7w.APPLICANT_FIRST_NAME.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 117451
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2615
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1269
+      },
+      {
+        "semantic_type": "city",
+        "count": 671
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 11
+      }
+    ]
+  },
+  "h9gi-nx95.VEHICLE_TYPE_CODE_5.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 10423
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 62
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 11
+      }
+    ]
+  },
+  "uq7m-95z8.interest6.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 26
+      }
+    ]
+  },
+  "mqdy-gu73.Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "color",
+        "count": 190
+      },
+      {
+        "semantic_type": "other",
+        "count": 47
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 37
+      },
+      {
+        "semantic_type": "city",
+        "count": 5
+      }
+    ]
+  },
+  "fxdy-q85h.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1617
+      }
+    ]
+  },
+  "aiww-p3af.Street_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1401230
+      },
+      {
+        "semantic_type": "other",
+        "count": 49978
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 47868
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 15401
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 13801
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 70
+      },
+      {
+        "semantic_type": "address",
+        "count": 62
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 28
+      },
+      {
+        "semantic_type": "city",
+        "count": 7
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      }
+    ]
+  },
+  "7jkp-5w5g.Agency.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 273
+      }
+    ]
+  },
+  "446w-773i.Address_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 1858
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 76
+      },
+      {
+        "semantic_type": "other",
+        "count": 67
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 48
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 17
+      }
+    ]
+  },
+  "pq5i-thsu.DVC_MAKE.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 322624
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 8758
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 3284
+      },
+      {
+        "semantic_type": "color",
+        "count": 272
+      },
+      {
+        "semantic_type": "city",
+        "count": 159
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 85
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 14
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 10
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "4s7y-vm5x.CORE_SUBJECT.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 513
+      }
+    ]
+  },
+  "3btx-p4av.COMPARABLE_RENTAL___1__Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2252
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 379
+      },
+      {
+        "semantic_type": "city",
+        "count": 77
+      }
+    ]
+  },
+  "h9gi-nx95.VEHICLE_TYPE_CODE_3.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 128606
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1570
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 481
+      },
+      {
+        "semantic_type": "color",
+        "count": 3
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 1
+      }
+    ]
+  },
+  "3rfa-3xsf.Incident_Zip.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 1659818
+      },
+      {
+        "semantic_type": "other",
+        "count": 464
+      }
+    ]
+  },
+  "yg5a-hytu.CORE_SUBJECT___MS_CORE_and__09_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 499
+      }
+    ]
+  },
+  "kiv2-tbus.Vehicle_Body_Type.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 9067896
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1518318
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1363
+      },
+      {
+        "semantic_type": "color",
+        "count": 47
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 12
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 2
+      }
+    ]
+  },
+  "i9pf-sj7c.INTEREST.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 719
+      }
+    ]
+  },
+  "ffnc-f3aa.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1664
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 466
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 386
+      },
+      {
+        "semantic_type": "other",
+        "count": 13
+      }
+    ]
+  },
+  "uwyv-629c.StreetName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 1740074
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 73339
+      },
+      {
+        "semantic_type": "other",
+        "count": 57185
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 22345
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 17428
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 5
+      },
+      {
+        "semantic_type": "address",
+        "count": 3
+      }
+    ]
+  },
+  "2bnn-yakx.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 7365305
+      },
+      {
+        "semantic_type": "color",
+        "count": 2899329
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 386039
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 228683
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 7
+      },
+      {
+        "semantic_type": "borough",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 3
+      }
+    ]
+  },
+  "ipu4-2q9a.Owner_s_House_Zip_Code.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 3564178
+      },
+      {
+        "semantic_type": "other",
+        "count": 20624
+      }
+    ]
+  },
+  "sxmw-f24h.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1788067
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 5707
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 156
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 142
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 38
+      }
+    ]
+  },
+  "dj4e-3xrn.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1352
+      },
+      {
+        "semantic_type": "school_level",
+        "count": 511
+      }
+    ]
+  },
+  "yvxd-uipr.Location_1.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 6513
+      }
+    ]
+  },
+  "nhms-9u6g.Name__Last__First_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 6356
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 124
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 22
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 1
+      }
+    ]
+  },
+  "ge8j-uqbf.interest.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 769
+      }
+    ]
+  },
+  "niy5-4j7q.MANHATTAN___COOPERATIVES_COMPARABLE_PROPERTIES___Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2241
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 405
+      },
+      {
+        "semantic_type": "city",
+        "count": 82
+      }
+    ]
+  },
+  "c284-tqph.Vehicle_Make.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 11450705
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 279516
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2488
+      },
+      {
+        "semantic_type": "color",
+        "count": 978
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 23
+      },
+      {
+        "semantic_type": "city",
+        "count": 15
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 10
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 6
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2
+      }
+    ]
+  },
+  "w9ak-ipjd.Filing_Representative_First_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 42449
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 219
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 26
+      },
+      {
+        "semantic_type": "color",
+        "count": 12
+      },
+      {
+        "semantic_type": "city",
+        "count": 12
+      }
+    ]
+  },
+  "h9gi-nx95.VEHICLE_TYPE_CODE_4.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 48494
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 329
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 65
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  },
+  "52dp-yji6.Owner_Last_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 193690
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2838
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1493
+      },
+      {
+        "semantic_type": "color",
+        "count": 1456
+      },
+      {
+        "semantic_type": "city",
+        "count": 852
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 673
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 93
+      },
+      {
+        "semantic_type": "address",
+        "count": 10
+      },
+      {
+        "semantic_type": "borough",
+        "count": 3
+      }
+    ]
+  },
+  "6wcu-cfa3.CORE_COURSE__MS_CORE_and_9_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 18944
+      }
+    ]
+  },
+  "ajxm-kzmj.NeighborhoodName.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 227
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 67
+      },
+      {
+        "semantic_type": "city",
+        "count": 17
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 14
+      }
+    ]
+  },
+  "43nn-pn8j.DBA.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 259109
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 123345
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 6970
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 5441
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 188
+      },
+      {
+        "semantic_type": "color",
+        "count": 92
+      },
+      {
+        "semantic_type": "address",
+        "count": 90
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 56
+      },
+      {
+        "semantic_type": "city",
+        "count": 35
+      }
+    ]
+  },
+  "wcmg-48ep.CORE_SUBJECT___MS_CORE_and__09_12_ONLY_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 127
+      }
+    ]
+  },
+  "ji82-xba5.address.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 28846
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 4090
+      },
+      {
+        "semantic_type": "other",
+        "count": 3213
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1148
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 303
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 17
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 1
+      }
+    ]
+  },
+  "cspg-yi7g.ADDRESS.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 575235
+      },
+      {
+        "semantic_type": "other",
+        "count": 131462
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 16263
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 12555
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 6898
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 179
+      }
+    ]
+  },
+  "jz4z-kudi.Violation_Location__Zip_Code_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 15144120
+      },
+      {
+        "semantic_type": "other",
+        "count": 82414
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 7
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 4
+      },
+      {
+        "semantic_type": "borough",
+        "count": 2
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1
+      }
+    ]
+  },
+  "a5td-mswe.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 8391792
+      },
+      {
+        "semantic_type": "color",
+        "count": 2748792
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 448029
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 194850
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 16
+      },
+      {
+        "semantic_type": "borough",
+        "count": 3
+      },
+      {
+        "semantic_type": "city",
+        "count": 3
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1
+      }
+    ]
+  },
+  "kwmq-dbub.CANDMI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 50793
+      }
+    ]
+  },
+  "qu8g-sxqf.MI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 161732
+      }
+    ]
+  },
+  "t8hj-ruu2.License_Business_City.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 27703
+      },
+      {
+        "semantic_type": "city",
+        "count": 23231
+      },
+      {
+        "semantic_type": "borough",
+        "count": 21182
+      },
+      {
+        "semantic_type": "other",
+        "count": 14754
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2348
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 75
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 42
+      },
+      {
+        "semantic_type": "color",
+        "count": 8
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "e9xc-u3ds.CANDMI.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 26668
+      }
+    ]
+  },
+  "8gqz-6v9v.Website.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "website",
+        "count": 76
+      },
+      {
+        "semantic_type": "other",
+        "count": 8
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 5
+      }
+    ]
+  },
+  "bdjm-n7q4.CrossStreet2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 466466
+      },
+      {
+        "semantic_type": "other",
+        "count": 32117
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 12526
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 3796
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2527
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 12
+      },
+      {
+        "semantic_type": "address",
+        "count": 4
+      },
+      {
+        "semantic_type": "city",
+        "count": 2
+      }
+    ]
+  },
+  "fzv4-jan3.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_name",
+        "count": 1262
+      },
+      {
+        "semantic_type": "school_level",
+        "count": 238
+      }
+    ]
+  },
+  "3rfa-3xsf.Park_Facility_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1771033
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 7294
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 4888
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 433
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 259
+      }
+    ]
+  },
+  "faiq-9dfq.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 8231710
+      },
+      {
+        "semantic_type": "color",
+        "count": 2650654
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 430142
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 185511
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 10
+      },
+      {
+        "semantic_type": "borough",
+        "count": 3
+      },
+      {
+        "semantic_type": "city",
+        "count": 3
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 3
+      }
+    ]
+  },
+  "as69-ew8f.StartCity.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 62968
+      },
+      {
+        "semantic_type": "borough",
+        "count": 61245
+      },
+      {
+        "semantic_type": "city",
+        "count": 16390
+      },
+      {
+        "semantic_type": "other",
+        "count": 5982
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 45
+      },
+      {
+        "semantic_type": "address",
+        "count": 14
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 3
+      }
+    ]
+  },
+  "erm2-nwe9.Incident_Zip.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "zip_code",
+        "count": 20283284
+      },
+      {
+        "semantic_type": "other",
+        "count": 2520
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 2
+      },
+      {
+        "semantic_type": "city",
+        "count": 1
+      }
+    ]
+  },
+  "s3k6-pzi2.interest4.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 53
+      }
+    ]
+  },
+  "bdjm-n7q4.Location.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "lat_lon_cord",
+        "count": 482236
+      }
+    ]
+  },
+  "pvqr-7yc4.Vehicle_Color.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1728642
+      },
+      {
+        "semantic_type": "color",
+        "count": 474400
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 92716
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 34004
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 3
+      }
+    ]
+  },
+  "mjux-q9d4.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1732
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 493
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 394
+      },
+      {
+        "semantic_type": "other",
+        "count": 11
+      }
+    ]
+  },
+  "szkz-syh6.Prequalified_Vendor_Address.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 3859
+      },
+      {
+        "semantic_type": "other",
+        "count": 709
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 130
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 88
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 62
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 1
+      }
+    ]
+  },
+  "aiww-p3af.School_Name.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1868694
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 6972
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 6895
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 413
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 262
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 2
+      }
+    ]
+  },
+  "9b9u-8989.Establishment_Street.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "address",
+        "count": 3376
+      },
+      {
+        "semantic_type": "other",
+        "count": 1644
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 161
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 85
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 37
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 5
+      }
+    ]
+  },
+  "h9gi-nx95.VEHICLE_TYPE_CODE_2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1269708
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 26707
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 15880
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 28
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 19
+      },
+      {
+        "semantic_type": "color",
+        "count": 11
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 1
+      }
+    ]
+  },
+  "xne4-4v8f.SCHOOL_LEVEL_.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "school_level",
+        "count": 1732
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 493
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 394
+      },
+      {
+        "semantic_type": "other",
+        "count": 11
+      }
+    ]
+  },
+  "f4rp-2kvy.Street.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 89869
+      },
+      {
+        "semantic_type": "other",
+        "count": 3590
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 3257
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1165
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 604
+      },
+      {
+        "semantic_type": "address",
+        "count": 30
+      },
+      {
+        "semantic_type": "city",
+        "count": 3
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      }
+    ]
+  },
+  "pvqr-7yc4.Vehicle_Body_Type.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 2042723
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 300569
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 19
+      },
+      {
+        "semantic_type": "color",
+        "count": 11
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 5
+      }
+    ]
+  },
+  "w6yt-hctp.BROOKLYN_CONDOMINIUM_PROPERTY_Neighborhood.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 287
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 82
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 31
+      },
+      {
+        "semantic_type": "city",
+        "count": 21
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2
+      }
+    ]
+  },
+  "4e2n-s75z.Address.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 31018
+      },
+      {
+        "semantic_type": "address",
+        "count": 22362
+      },
+      {
+        "semantic_type": "other",
+        "count": 2139
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 1488
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 578
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 132
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 20
+      }
+    ]
+  },
+  "n84m-kx4j.VEHICLE_MAKE.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 7486
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 1
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 1
+      }
+    ]
+  },
+  "sqcr-6mww.Cross_Street_2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 869130
+      },
+      {
+        "semantic_type": "other",
+        "count": 43743
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 19123
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 15553
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 7038
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 25
+      },
+      {
+        "semantic_type": "city",
+        "count": 19
+      },
+      {
+        "semantic_type": "address",
+        "count": 1
+      },
+      {
+        "semantic_type": "borough",
+        "count": 1
+      }
+    ]
+  },
+  "p937-wjvj.HOUSE_NUMBER.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "other",
+        "count": 1741977
+      },
+      {
+        "semantic_type": "zip_code",
+        "count": 851
+      },
+      {
+        "semantic_type": "phone_number",
+        "count": 20
+      },
+      {
+        "semantic_type": "street_name",
+        "count": 14
+      }
+    ]
+  },
+  "uzcy-9puk.Intersection_Street_2.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "street_name",
+        "count": 369364
+      },
+      {
+        "semantic_type": "other",
+        "count": 14200
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 10979
+      },
+      {
+        "semantic_type": "neighborhood",
+        "count": 6980
+      },
+      {
+        "semantic_type": "business_name",
+        "count": 2776
+      },
+      {
+        "semantic_type": "address",
+        "count": 205
+      },
+      {
+        "semantic_type": "borough",
+        "count": 111
+      },
+      {
+        "semantic_type": "city",
+        "count": 62
+      },
+      {
+        "semantic_type": "school_name",
+        "count": 24
+      }
+    ]
+  },
+  "5fn4-dr26.City.txt.gz": {
+    "semantic_types": [
+      {
+        "semantic_type": "neighborhood",
+        "count": 86069
+      },
+      {
+        "semantic_type": "borough",
+        "count": 74334
+      },
+      {
+        "semantic_type": "city",
+        "count": 57929
+      },
+      {
+        "semantic_type": "other",
+        "count": 10096
+      },
+      {
+        "semantic_type": "park_playground",
+        "count": 2716
+      },
+      {
+        "semantic_type": "color",
+        "count": 1
+      }
+    ]
+  }
+}

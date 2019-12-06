@@ -2,7 +2,6 @@
 import json
 import os
 import re
-import difflib
 
 from pyspark import SparkContext
 
@@ -24,16 +23,42 @@ neiborhoods = "bath,beach,allerton,battery,park,city,arverne,annadale,bay,ridge,
 street_pattern = "street,st,road,rd,ave,avenue,blvd,drive,court,place,pl,boulevard,way,parkway"
 
 cities = cities.split(",")
+cities.sort()
 counties = counties.replace("-", " ").split(",")
+counties.sort()
 borough = borough.split(",")
+borough.sort()
 borough_ab = borough_ab.split(",")
+borough_ab.sort()
 school_levels = school_levels.split(",")
+school_levels.sort()
 park_types = park_types.split(",")
+park_types.sort()
 colors = colors.split(",")
+colors.sort()
 business_pattern = business_pattern.split(",")
+business_pattern.sort()
 school_name_pattern = school_name_pattern.split(",")
+school_name_pattern.sort()
 neiborhoods = neiborhoods.split(",")
+neiborhoods.sort()
 street_pattern = street_pattern.split(",")
+street_pattern.sort()
+
+
+def binary_search(source_list, target):
+    left = 0
+    right = len(source_list) - 1
+    while left <= right:
+        mid = left + (right - left) // 2
+        if source_list[mid] == target:
+            return True
+        elif source_list[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return False
+
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -128,43 +153,53 @@ def check_semantic_type(input):
     if input is None:
         predict_types.append(('other', 1))
         return predict_types
-    x = str(input[0]).strip()
-    # Person Name
-    if is_person_name(x):
-        predict_types.append(('person_name', input[1]))
-    # Business Name
-    if is_business_name(x):
-        predict_types.append(('business_name', input[1]))
+    x = str(input[0]).strip().lower()
+    # Regular Expression
     # Phone Number
     if is_phone(x):
         predict_types.append(('phone_number', input[1]))
-    # Address
-    if is_address(x):
-        predict_types.append(('address', input[1]))
-    # Street Name
-    if is_street(x):
-        predict_types.append(('street_name', input[1]))
-    # City
-    if is_city(x):
-        predict_types.append(('city', input[1]))
-    # Neighborhood
-    if is_neiborhood(x):
-        predict_types.append(('neighborhood', input[1]))
     # LAT/LON coordinates
     if is_long_lat(x):
         predict_types.append(('lat_lon_cord', 1))
     # Zip code
     if is_zip(x):
         predict_types.append(('zip_code', input[1]))
-    # Borough
-    if is_borough(x):
-        predict_types.append(('borough', input[1]))
+    # websites
+    if is_website(x):
+        predict_types.append(('website', input[1]))
+    # External Check (small)
     # School name
     if is_school_name(x):
         predict_types.append(('school_name', input[1]))
+    # Borough
+    if is_borough(x):
+        predict_types.append(('borough', input[1]))
+    # school level
+    if is_school_level(x):
+        predict_types.append(('school_level', input[1]))
+    # parks/playground
+    if is_park_playground(x):
+        predict_types.append(('park_playground', input[1]))
+    # Business Name
+    if is_business_name(x):
+        predict_types.append(('business_name', input[1]))
+    # Address
+    if is_address(x):
+        predict_types.append(('address', input[1]))
+    # Street Name
+    if is_street(x):
+        predict_types.append(('street_name', input[1]))
+
+    # External Check (large)
+    # Neighborhood
+    if is_neiborhood(x):
+        predict_types.append(('neighborhood', input[1]))
     # Color
     if is_color(x):
         predict_types.append(('color', input[1]))
+    # City
+    if is_city(x):
+        predict_types.append(('city', input[1]))
     # Car Make
     # if col_name == 'car_make':
     #     predict_types.append(('car_make', input[1]))
@@ -175,20 +210,16 @@ def check_semantic_type(input):
 
     # subjects in school
 
-    # school level
-    if is_school_level(x):
-        predict_types.append(('school_level', input[1]))
     # college/university names
 
-    # websites
-    if is_website(x):
-        predict_types.append(('website', input[1]))
     # building classification
     # vehicle type
     # type of location
-    # parks/playground
-    if is_park_playground(x):
-        predict_types.append(('park_playground', input[1]))
+
+    # Final Check
+    # Person Name
+    # if is_person_name(x):
+    #     predict_types.append(('person_name', input[1]))
     if len(predict_types) == 0:
         predict_types.append(('other', input[1]))
     return predict_types
@@ -196,26 +227,26 @@ def check_semantic_type(input):
 
 def is_long_lat(x):
     return re.match(
-        re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'), x)
+        re.compile(r'^[(]?[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)[)]?$'), x)
 
 
 def is_school_level(x):
-    return x.lower() in school_levels
+    return binary_search(school_levels, x)
 
 
 def is_school_name(x):
-    x = x.lower().split()
+    x = x.split()
     for e in x:
-        if e in school_name_pattern:
+        if binary_search(school_name_pattern, e):
             return True
     return False
 
 
 # decide if this string is a street_name or an address
 def is_address_helper(x):
-    x = x.lower().split()
+    x = x.split()
     int_pattern = re.compile(r'^\d+[-]?\d*$')
-    if len(x) >= 3 and re.match(int_pattern, x[0]) and x[1] not in street_pattern:
+    if len(x) >= 3 and re.match(int_pattern, x[0]) and not binary_search(street_pattern, x[1]):
         return True
     else:
         return False
@@ -223,12 +254,11 @@ def is_address_helper(x):
 
 # check if the input string contains a street_name pattern
 def is_street_helper(x):
-    x = x.lower().split()
+    x = x.split()
     flag = False
     for e in x:
-        if e in street_pattern:
-            flag = True
-            break
+        if binary_search(street_pattern, e):
+            return True
     if not flag:
         return False
 
@@ -242,11 +272,11 @@ def is_address(x):
 
 
 def is_color(x):
-    return x.lower() in colors
+    return binary_search(colors, x)
 
 
 def is_neiborhood(x):
-    return x.lower() in neiborhoods
+    return binary_search(neiborhoods, x)
 
 
 def is_zip(x):
@@ -259,13 +289,13 @@ def is_person_name(x):
 
 
 def is_city(x):
-    return x.lower() in cities or counties
+    return binary_search(cities, x) or binary_search(counties, x)
 
 
 def is_park_playground(x):
     # if string x contains any type of park type string, return true, else false
     for e in park_types:
-        if e in x.lower():
+        if e in x:
             return True
     return False
 
@@ -273,13 +303,13 @@ def is_park_playground(x):
 def is_business_name(x):
     # if string x contains any type of business pattern, return true, else false
     for e in business_pattern:
-        if e in x.lower():
+        if e in x:
             return True
     return False
 
 
 def is_borough(x):
-    return x.lower() in borough or x in borough_ab
+    return binary_search(borough, x) or binary_search(borough_ab, x)
 
 
 def is_phone(x):
@@ -290,7 +320,7 @@ def is_phone(x):
 def is_website(x):
     pattern = re.compile(
         r'https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,}')
-    return re.match(pattern, x.lower())
+    return re.match(pattern, x)
 
 
 def init_files():
@@ -342,7 +372,8 @@ if __name__ == "__main__":
         print("%s %s start" % (dataset, column))
         # get column type according to name
         column_name_type = get_type_from_col_name(column)
-        file_rdd = sc.textFile(full_file)
+        print(column_name_type)
+        file_rdd = sc.textFile(full_file).cache()
         type_rdd = file_rdd.map(lambda x: (x.split("\t")[0], int(x.split("\t")[1]))) \
             .flatMap(check_semantic_type) \
             .reduceByKey(lambda a, b: a + b) \
@@ -356,12 +387,12 @@ if __name__ == "__main__":
             result[file]['semantic_types'].append(semantic_types)
         predicted_labels = get_predicted_labels(column_name_type, column_data_type)
         csv_result.append(file.replace(".txt.gz", "") + "," + predicted_labels)
-        print(column_name_type)
         print(column_data_type)
-    with open("task2_res.json", 'w') as fp:
+        print(predicted_labels)
+    with open("task2.json", 'w+') as fp:
+        print("save task2_res.json")
         json.dump(result, fp, cls=MyEncoder)
-    with open("predict_label.csv", 'w') as fp:
+    with open("predict_label.csv", 'w+') as fp:
         fp.write("column_name,label\n")
         for line in csv_result:
             fp.write(line + "\n")
-
