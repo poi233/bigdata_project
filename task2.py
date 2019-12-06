@@ -143,7 +143,7 @@ def check_semantic_type(input):
     if is_address(x):
         predict_types.append(('address', input[1]))
     # Street Name
-    if is_street_name(x):
+    if is_street(x):
         predict_types.append(('street_name', input[1]))
     # City
     if is_city(x):
