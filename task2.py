@@ -22,6 +22,7 @@ school_name_pattern = "acad,academic,school,p.s.,i.s.,hs,sped,m.s.,ps/is,j.h.s."
 neiborhoods = "bath,beach,allerton,battery,arverne,annadale,bay,ridge,bathgate,beekman,astoria,arden,heights,bedford,stuyvesant,baychester,carnegie,astoria,heights,arlington,bensonhurst,bedford,chelsea,auburndale,arrochar,bergen,belmont,chinatown,terrace,terrace,boerum,bronxdale,civic,center,bayside,bloomfield,clinton,bayswater,bulls,head,brighton,beach,harlem,beechhurst,butler,manor,broadway,junction,castle,hill,east,village,bellaire,castleton,corners,brooklyn,heights,city,island,financial,district,belle,harbor,charleston,brownsville,claremont,village,flatiron,bellerose,chelsea,bushwick,clason,point,gramercy,blissville,clifton,canarsie,concourse,greenwich,village,breezy,point,concord,carroll,gardens,concourse,village,hamilton,heights,briarwood,dongan,hills,city,line,co-op,city,harlem,(central),broad,channel,egbertville,clinton,hill,country,club,herald,square,brookville,elm,park,cobble,hill,east,tremont,hudson,square,cambria,heights,eltingville,coney,island,eastchester,inwood,clearview,emerson,hill,crown,heights,edenwald,lenox,hill,college,point,fox,hills,cypress,hills,edgewater,park,lincoln,square,douglaston,graniteville,ditmas,park,fieldston,little,italy,dutch,kills,grant,city,downtown,fordham,lower,east,side,east,elmhurst,grasmere,dumbo,high,bridge,manhattan,valley,edgemere,great,kills,dyker,heights,hunts,point,manhattanville,elmhurst,greenridge,east,flatbush,kingsbridge,midtown,south,far,rockaway,grymes,hill,east,new,york,kingsbridge,heights,midtown,floral,park,heartland,village,east,williamsburg,longwood,morningside,heights,flushing,howland,hook,farragut,marble,hill,murray,hill,flushing,(downtown),huguenot,flatbush,melrose,noho,forest,hills,lighthouse,hill,flatlands,morris,heights,roosevelt,island,forest,hills,gardens,livingston,fort,greene,morris,park,soho,fresh,meadows,manor,heights,fort,hamilton,morrisania,south,village,glen,oaks,mariner's,harbor,fulton,ferry,mott,haven,stuyvesant,town,glendale,midland,beach,georgetown,mount,eden,sutton,place,hammels,new,brighton,gerritsen,beach,mount,hope,times,square,hillcrest,new,dorp,gowanus,north,riverdale,tribeca,hollis,new,dorp,beach,gravesend,norwood,tudor,city,holliswood,new,springville,greenpoint,olinville,turtle,bay,howard,beach,oakwood,highland,park,parkchester,union,square,hunters,point,old,place,homecrest,pelham,bay,upper,east,side,jackson,heights,old,town,kensington,pelham,gardens,upper,west,side,jamaica,park,hill,kings,highway,pelham,parkway,wall,street,jamaica,center,pleasant,plains,manhattan,beach,port,morris,washington,heights,jamaica,estates,port,ivory,manhattan,terrace,riverdale,west,village,jamaica,hills,port,richmond,mapleton,schuylerville,yorkville,kew,gardens,prince's,bay,marine,park,soundview,kew,gardens,hills,randall,manor,midwood,spuyten,duyvil,laurelton,richmond,town,mill,basin,throgs,neck,lefrak,city,richmond,valley,mill,island,unionport,lindenwood,rosebank,navy,yard,university,heights,little,neck,rossville,new,lots,van,nest,long,island,city,sandy,ground,north,side,wakefield,malba,shore,acres,ocean,hill,west,farms,maspeth,silver,lake,ocean,parkway,westchester,square,middle,village,south,beach,paerdegat,basin,williamsbridge,murray,hill,st.,george,park,slope,woodlawn,neponsit,stapleton,plum,beach,new,hyde,park,sunnyside,prospect,heights,north,corona,todt,hill,prospect,lefferts,gardens,oakland,gardens,tompkinsville,prospect,park,south,ozone,park,tottenville,red,hook,pomonok,travis,remsen,village,queens,village,ward,hill,rugby,queensboro,hill,west,brighton,sea,gate,ravenswood,westerleigh,sheepshead,bay,rego,park,willowbrook,south,side,richmond,hill,woodrow,spring,creek,ridgewood,starrett,city,rochdale,stuyvesant,heights,rockaway,park,sunset,park,rosedale,tompkins,park,north,roxbury,vinegar,hill,seaside,weeksville,somerville,west,brighton,south,corona,williamsburg,south,jamaica,windsor,terrace,south,ozone,park,wingate,springfield,gardens,st.,albans,steinway,sunnyside,sunnyside,gardens,utopia,whitestone,woodhaven,woodside"
 street_pattern = "street,st,road,rd,ave,avenue,blvd,drive,court,place,pl,boulevard,way,parkway"
 color_ab = "BK,BL,BR,GL,GY,MR,OR,PK,PR,RD,TN,WH,YW,LT,DK,NOCL"
+car_types = "FIRE,CONV,SEDN,SUBN,4DSD,2DSD,H/WH,ATV,MCY,H/IN,TRAV,MOBL,TR/E,T/CR,TR/C,SWT,W/DR,W/SR,FPM,MCC,EMVR,TRAC,N/A,DELV,DUMP,FLAT,PICK,STAK,TANK,REFG,LOCO,CUST,RPLC,AMBU,P/SH,RBM,R/RD,RD/S,S/SP,SN/P,TOW,VAN,UTIL,POLE,BOAT,H/TR,SEMI,TRLR,LTRL,LSVT,BUS,LIM,HRSE,TAXI,DCOM,CMIX,MOPD,MFH,SNOW,LSV"
 
 cities = cities.split(",")
 cities.sort()
@@ -47,6 +48,8 @@ street_pattern = street_pattern.split(",")
 street_pattern.sort()
 color_ab = color_ab.split(",")
 color_ab.sort()
+car_types = car_types.split(",")
+car_types.sort()
 
 def binary_search(source_list, target):
     left = 0
@@ -216,6 +219,8 @@ def check_semantic_type(input):
 
     # building classification
     # vehicle type
+    if is_vehicle_type(x):
+        predict_types.append(('vehicle_type', input[1]))
     # type of location
 
     # Final Check
@@ -243,6 +248,9 @@ def is_school_name(x):
             return True
     return False
 
+
+def is_vehicle_type(x):
+    return binary_search(car_types, x)
 
 # decide if this string is a street_name or an address
 def is_address_helper(x):
