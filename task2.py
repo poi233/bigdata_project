@@ -16,6 +16,11 @@ borough = "bronx,brooklyn,manhattan,queens,staten island,the bronx,bkly"
 borough_ab = "K,M,Q,R,X"
 school_levels = "elementary,k-8,middle,high school,high school transfer,k-3,yabc"
 park_types = "playground,park,field,garden,senior center,gardens,parkway"
+colors = "amber,ash,asphalt,auburn,avocado,aquamarine,azure,beige,bisque,black,blue,bone,bordeaux,brass,bronze,brown,burgundy,camel,caramel,canary,celeste,cerulean,champagne,charcoal,chartreuse,chestnut,chocolate,citron,claret,coal,cobalt,coffee,coral,corn,cream,crimson,cyan,denim,desert,ebony,ecru,emerald,feldspar,fuchsia,gold,gray,green,heather,indigo,ivory,jet,khaki,lime,magenta,maroon,mint,navy,olive,orange,pink,plum,purple,red,rust,salmon,sienna,silver,snow,steel,tan,teal,tomato,violet,white,yellow"
+business_pattern = "corp,inc,llc,bar,service,cafe,market,mall,restaurant,taste,pizza,fusion,food"
+school_name_pattern = "acad,academic,school,p.s.,i.s.,hs,sped,m.s.,ps/is,j.h.s."
+neiborhoods = "bath,beach,allerton,battery,park,city,arverne,annadale,bay,ridge,bathgate,beekman,place,astoria,arden,heights,bedford,stuyvesant,baychester,carnegie,hill,astoria,heights,arlington,bensonhurst,bedford,park,chelsea,auburndale,arrochar,bergen,beach,belmont,chinatown,bay,terrace,bay,terrace,boerum,hill,bronxdale,civic,center,bayside,bloomfield,borough,park,bronx,park,south,clinton,bayswater,bulls,head,brighton,beach,bronx,river,east,harlem,beechhurst,butler,manor,broadway,junction,castle,hill,east,village,bellaire,castleton,corners,brooklyn,heights,city,island,financial,district,belle,harbor,charleston,brownsville,claremont,village,flatiron,bellerose,chelsea,bushwick,clason,point,gramercy,blissville,clifton,canarsie,concourse,greenwich,village,breezy,point,concord,carroll,gardens,concourse,village,hamilton,heights,briarwood,dongan,hills,city,line,co-op,city,harlem,(central),broad,channel,egbertville,clinton,hill,country,club,herald,square,brookville,elm,park,cobble,hill,east,tremont,hudson,square,cambria,heights,eltingville,coney,island,eastchester,inwood,clearview,emerson,hill,crown,heights,edenwald,lenox,hill,college,point,fox,hills,cypress,hills,edgewater,park,lincoln,square,douglaston,graniteville,ditmas,park,fieldston,little,italy,dutch,kills,grant,city,downtown,fordham,lower,east,side,east,elmhurst,grasmere,dumbo,high,bridge,manhattan,valley,edgemere,great,kills,dyker,heights,hunts,point,manhattanville,elmhurst,greenridge,east,flatbush,kingsbridge,midtown,south,far,rockaway,grymes,hill,east,new,york,kingsbridge,heights,midtown,floral,park,heartland,village,east,williamsburg,longwood,morningside,heights,flushing,howland,hook,farragut,marble,hill,murray,hill,flushing,(downtown),huguenot,flatbush,melrose,noho,forest,hills,lighthouse,hill,flatlands,morris,heights,roosevelt,island,forest,hills,gardens,livingston,fort,greene,morris,park,soho,fresh,meadows,manor,heights,fort,hamilton,morrisania,south,village,glen,oaks,mariner's,harbor,fulton,ferry,mott,haven,stuyvesant,town,glendale,midland,beach,georgetown,mount,eden,sutton,place,hammels,new,brighton,gerritsen,beach,mount,hope,times,square,hillcrest,new,dorp,gowanus,north,riverdale,tribeca,hollis,new,dorp,beach,gravesend,norwood,tudor,city,holliswood,new,springville,greenpoint,olinville,turtle,bay,howard,beach,oakwood,highland,park,parkchester,union,square,hunters,point,old,place,homecrest,pelham,bay,upper,east,side,jackson,heights,old,town,kensington,pelham,gardens,upper,west,side,jamaica,park,hill,kings,highway,pelham,parkway,wall,street,jamaica,center,pleasant,plains,manhattan,beach,port,morris,washington,heights,jamaica,estates,port,ivory,manhattan,terrace,riverdale,west,village,jamaica,hills,port,richmond,mapleton,schuylerville,yorkville,kew,gardens,prince's,bay,marine,park,soundview,kew,gardens,hills,randall,manor,midwood,spuyten,duyvil,laurelton,richmond,town,mill,basin,throgs,neck,lefrak,city,richmond,valley,mill,island,unionport,lindenwood,rosebank,navy,yard,university,heights,little,neck,rossville,new,lots,van,nest,long,island,city,sandy,ground,north,side,wakefield,malba,shore,acres,ocean,hill,west,farms,maspeth,silver,lake,ocean,parkway,westchester,square,middle,village,south,beach,paerdegat,basin,williamsbridge,murray,hill,st.,george,park,slope,woodlawn,neponsit,stapleton,plum,beach,new,hyde,park,sunnyside,prospect,heights,north,corona,todt,hill,prospect,lefferts,gardens,oakland,gardens,tompkinsville,prospect,park,south,ozone,park,tottenville,red,hook,pomonok,travis,remsen,village,queens,village,ward,hill,rugby,queensboro,hill,west,brighton,sea,gate,ravenswood,westerleigh,sheepshead,bay,rego,park,willowbrook,south,side,richmond,hill,woodrow,spring,creek,ridgewood,starrett,city,rochdale,stuyvesant,heights,rockaway,park,sunset,park,rosedale,tompkins,park,north,roxbury,vinegar,hill,seaside,weeksville,somerville,west,brighton,south,corona,williamsburg,south,jamaica,windsor,terrace,south,ozone,park,wingate,springfield,gardens,st.,albans,steinway,sunnyside,sunnyside,gardens,utopia,whitestone,woodhaven,woodside"
+street_pattern = "street,st,road,rd,ave,avenue,blvd,drive,court,place,pl,boulevard,way,parkway"
 
 cities = cities.split(",")
 counties = counties.replace("-", " ").split(",")
@@ -23,7 +28,11 @@ borough = borough.split(",")
 borough_ab = borough_ab.split(",")
 school_levels = school_levels.split(",")
 park_types = park_types.split(",")
-
+colors = colors.split(",")
+business_pattern = business_pattern.split(",")
+school_name_pattern = school_name_pattern.split(",")
+neiborhoods = neiborhoods.split(",")
+street_pattern = street_pattern.split(",")
 
 class MyEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -112,7 +121,8 @@ def get_type_from_col_name(x):
     return 'other'
 
 
-def check_semantic_type(input, col_name):
+def check_semantic_type(input):
+    col_name = input[2]
     predict_types = []
     # check null
     if input is None:
@@ -120,25 +130,25 @@ def check_semantic_type(input, col_name):
         return predict_types
     x = str(input[0]).strip()
     # Person Name
-    if col_name == 'person_name' and is_person_name(x):
+    if is_person_name(x):
         predict_types.append(('person_name', input[1]))
     # Business Name
-    if col_name == 'business_name':
+    if is_business_name(x):
         predict_types.append(('business_name', input[1]))
     # Phone Number
     if is_phone(x):
         predict_types.append(('phone_number', input[1]))
     # Address
-    if col_name == 'address':
+    if is_address(x):
         predict_types.append(('address', input[1]))
     # Street Name
-    if col_name == 'street_name':
-        predict_types.append(('address', input[1]))
+    if is_street_name(x):
+        predict_types.append(('street_name', input[1]))
     # City
     if is_city(x):
         predict_types.append(('city', input[1]))
     # Neighborhood
-    if col_name == 'neighborhood':
+    if is_neiborhood(x):
         predict_types.append(('neighborhood', input[1]))
     # LAT/LON coordinates
     if is_long_lat(x):
@@ -150,9 +160,11 @@ def check_semantic_type(input, col_name):
     if is_borough(x):
         predict_types.append(('borough', input[1]))
     # School name
-    if col_name == 'school_name':
+    if is_school_name(x):
         predict_types.append(('school_name', input[1]))
     # Color
+    if is_color(x):
+        predict_types.append(('color', input[1]))
     # Car Make
     if col_name == 'car_make':
         predict_types.append(('car_make', input[1]))
@@ -160,9 +172,14 @@ def check_semantic_type(input, col_name):
     if col_name == 'city_agency':
         predict_types.append(('city_agency', input[1]))
     # Area of study
+
     # subjects in school
+
     # school level
+    if is_school_level(x):
+        predict_types.append(('school_level', input[1]))
     # college/university names
+
     # websites
     if is_website(x):
         predict_types.append(('website', input[1]))
@@ -182,6 +199,53 @@ def is_long_lat(x):
         re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'), x)
 
 
+def is_school_level(x):
+    return x.lower() in school_levels
+
+
+def is_school_name(x):
+    x = x.lower().split()
+    for e in x:
+        if e in school_name_pattern:
+            return True
+    return False
+# decide if this string is a street_name or an address
+def is_address_helper(x):
+    x = x.lower().split()
+    int_pattern = re.compile(r'^\d+[-]?\d*$')
+    if len(x) >= 3 and re.match(int_pattern, x[0]) and x[1] not in street_pattern:
+        return True
+    else:
+        return False
+
+# check if the input string contains a street_name pattern
+def is_street_helper(x):
+    x = x.lower().split()
+    flag = False
+    for e in x:
+        if e in street_pattern:
+            flag = True
+            break
+    if not flag:
+        return False
+
+
+def is_street(x):
+    return is_street_helper(x) and not is_address_helper(x)
+
+
+def is_address(x):
+    return is_street_helper(x) and is_address_helper(x)
+
+
+def is_color(x):
+    return x.lower() in colors
+
+
+def is_neiborhood(x):
+    return x.lower() in neiborhoods
+
+
 def is_zip(x):
     return re.match(re.compile(r'^[\d]{5,5}$'), x)
 
@@ -199,6 +263,14 @@ def is_city(x):
 def is_park_playground(x):
     # if string x contains any type of park type string, return true, else false
     for e in park_types:
+        if e in x.lower():
+            return True
+    return False
+
+
+def is_business_name(x):
+    # if string x contains any type of business pattern, return true, else false
+    for e in business_pattern:
         if e in x.lower():
             return True
     return False
@@ -269,7 +341,7 @@ if __name__ == "__main__":
         # get column type according to name
         column_name_type = get_type_from_col_name(column)
         file_rdd = sc.textFile(full_file)
-        type_rdd = file_rdd.map(lambda x: (x.split("\t")[0], int(x.split("\t")[1]))) \
+        type_rdd = file_rdd.map(lambda x: (x.split("\t")[0], int(x.split("\t")[1],column_name_type))) \
             .flatMap(check_semantic_type) \
             .reduceByKey(lambda a, b: a + b) \
             .sortBy(lambda x: -x[1]).cache()
