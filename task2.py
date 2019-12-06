@@ -123,7 +123,6 @@ def get_type_from_col_name(x):
 
 
 def check_semantic_type(input):
-    col_name = input[2]
     predict_types = []
     # check null
     if input is None:
@@ -167,11 +166,11 @@ def check_semantic_type(input):
     if is_color(x):
         predict_types.append(('color', input[1]))
     # Car Make
-    if col_name == 'car_make':
-        predict_types.append(('car_make', input[1]))
+    # if col_name == 'car_make':
+    #     predict_types.append(('car_make', input[1]))
     # City Agency
-    if col_name == 'city_agency':
-        predict_types.append(('city_agency', input[1]))
+    # if col_name == 'city_agency':
+    #     predict_types.append(('city_agency', input[1]))
     # Area of study
 
     # subjects in school
@@ -210,6 +209,8 @@ def is_school_name(x):
         if e in school_name_pattern:
             return True
     return False
+
+
 # decide if this string is a street_name or an address
 def is_address_helper(x):
     x = x.lower().split()
@@ -218,6 +219,7 @@ def is_address_helper(x):
         return True
     else:
         return False
+
 
 # check if the input string contains a street_name pattern
 def is_street_helper(x):
@@ -257,8 +259,7 @@ def is_person_name(x):
 
 
 def is_city(x):
-    return False
-    # return x.lower() in cities or counties
+    return x.lower() in cities or counties
 
 
 def is_park_playground(x):
@@ -342,7 +343,7 @@ if __name__ == "__main__":
         # get column type according to name
         column_name_type = get_type_from_col_name(column)
         file_rdd = sc.textFile(full_file)
-        type_rdd = file_rdd.map(lambda x: (x.split("\t")[0], int(x.split("\t")[1],column_name_type))) \
+        type_rdd = file_rdd.map(lambda x: (x.split("\t")[0], int(x.split("\t")[1]))) \
             .flatMap(check_semantic_type) \
             .reduceByKey(lambda a, b: a + b) \
             .sortBy(lambda x: -x[1]).cache()
