@@ -229,8 +229,7 @@ def is_street_helper(x):
     flag = False
     for e in x:
         if e in street_pattern:
-            flag = True
-            break
+            return True
     if not flag:
         return False
 
