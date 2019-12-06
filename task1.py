@@ -192,15 +192,15 @@ if __name__ == "__main__":
         while has_not_done:
             not_done = 0
             for i in range(offset + 1):
-                if i + offset * 2 >= len(data_sets):
+                if i + offset >= len(data_sets):
                     break
-                if not os.path.exists(my_dir + data_sets[i + offset * 2] + ".json"):
+                if not os.path.exists(my_dir + data_sets[i + offset] + ".json"):
                     not_done += 1
                     try:
-                        profile(data_sets[i + offset * 2])
+                        profile(data_sets[i + offset])
                     except:
-                        error_file.write("%s has error\n" % data_sets[i + offset * 2])
-                        print("%s has error\n" % data_sets[i + offset * 2])
+                        error_file.write("%s has error\n" % data_sets[i + offset])
+                        print("%s has error\n" % data_sets[i + offset])
                 else:
                     print("%s already processed" % data_sets[i + offset])
             if not_done == 0:
