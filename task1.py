@@ -186,7 +186,7 @@ if __name__ == "__main__":
     mkdir("./task1_data")
     # run profile for each dataset
     offset = int(len(data_sets) / 3)
-    my_dir = '/home/yp1207/project_pycharm/task1_data/'
+    my_dir = '/home/hj809/proj/task1_data/'
     has_not_done = True
     with open("./error_dataset.txt", 'a') as error_file:
         while has_not_done:
