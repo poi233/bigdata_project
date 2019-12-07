@@ -26,6 +26,8 @@ car_types = "FIRE,CONV,SEDN,SUBN,4DSD,2DSD,H/WH,ATV,MCY,H/IN,TRAV,MOBL,TR/E,T/CR
 building_classification_pattern = "WALK-UP,ELEVATOR,WALK-UP,CONDOPS".lower()
 subjects = "ENGLISH,MATH,SCIENCE,SOCIAL STUDIES,ALGEBRA,CHEMISTRY,EARTH SCIENCE,ECONOMICS,GEOMETRY,HISTORY,ENVIRONMENT,PHYSICS,US GOVERNMENT".lower()
 study_areas = "ANIMAL SCIENCE,ARCHITECTURE,BUSINESS.COMMUNICATIONS,COMPUTER SCIENCE & TECHNOLOGY,COSMETOLOGY,CULINARY ARTS,ENGINEERING,ENVIRONMENTAL SCIENCE,ENVIRONMENTAL SCIENCE,FILM/VIDEO,HEALTH PROFESSIONS,HOSPITALITY, TRAVEL AND TOURISM,HUMANITIES & INTERDISCIPLINARY,JROTC,LAW & GOVERNMENT,PERFORMING ARTS,PERFORMING ARTS/VISUAL ART & DESIGN,VISUAL ART & DESIGN,SCIENCE & MATH,TEACHING,ZONED".lower()
+location_types = "accounting,airport,amusement_park,aquarium,art_gallery,atm,bakery,bank,bar,beauty_salon,bicycle_store,book_store,bowling_alley,bus_station,cafe,campground,car_dealer,car_rental,car_repair,car_wash,casino,cemetery,church,city_hall,clothing_store,convenience_store,courthouse,dentist,department_store,doctor,drugstore,electrician,electronics_store,embassy,fire_station,florist,funeral_home,furniture_store,gas_station,grocery_or_supermarket,gym,hair_care,hardware_store,hindu_temple,home_goods_store,hospital,insurance_agency,jewelry_store,laundry,lawyer,library,light_rail_station,liquor_store,local_government_office,locksmith,lodging,meal_delivery,meal_takeaway,mosque,movie_rental,movie_theater,moving_company,museum,night_club,painter,park,parking,pet_store,pharmacy,physiotherapist,plumber,police,post_office,primary_school,real_estate_agency,restaurant,roofing_contractor,rv_park,school,secondary_school,shoe_store,shopping_mall,spa,stadium,storage,store,subway_station,supermarket,synagogue,taxi_stand,tourist_attraction,train_station,transit_station,travel_agency,university,veterinary_care,zoo"
+agencies = "ACS,BIC,CCHR,CCRB,DCA,DCAS,DCLA,DCP,DDC,DEP,DFTA,DHS,DOB,DOC,DOE,DOF,DOHMH,DOI,DOITT,DOP,DORIS,DOT,DPR,DSNY,DSS,DYCD,EDC,FDNY,HPD,HRA,LAW,LPC,MOCJ,MOCS,NYCEM,NYPD,OATH,SBS,TLC"
 
 cities = cities.split(",")
 cities.sort()
@@ -59,7 +61,10 @@ subjects = subjects.split(",")
 subjects.sort()
 study_areas = study_areas.split(",")
 study_areas.sort()
-
+location_types = location_types.split(",")
+location_types.sort()
+agencies = agencies.split(",")
+agencies.sort()
 
 def binary_search(source_list, target):
     left = 0
@@ -230,15 +235,16 @@ def check_semantic_type(input):
     # if col_name == 'car_make':
     #     predict_types.append(('car_make', input[1]))
     # City Agency
-    # if col_name == 'city_agency':
-    #     predict_types.append(('city_agency', input[1]))
+    if is_city_agency(x):
+        predict_types.append(('city_agency', input[1]))
     # college/university names
-
+    # It seems there are no such names in our datasets (not a single column is manually labeled as such)
     # vehicle type
     if is_vehicle_type(x):
         predict_types.append(('vehicle_type', input[1]))
     # type of location
-
+    if is_type_location(x):
+        predict_types.append(('location_type', input[1]))
     # Person Name
     # if is_person_name(x):
     #     predict_types.append(('person_name', input[1]))
@@ -251,6 +257,10 @@ def is_long_lat(x):
     return re.match(
         re.compile(r'^[(]?[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)[)]?$'),
         x)
+
+
+def is_city_agency(x):
+    return binary_search(agencies, x)
 
 
 def is_school_level(x):
@@ -269,6 +279,10 @@ def is_school_name(x):
 
 def is_vehicle_type(x):
     return binary_search(car_types, x)
+
+
+def is_type_location(x):
+    return binary_search(location_types, x)
 
 
 # decide if this string is a street_name or an address
