@@ -132,7 +132,7 @@ def profile(dataset):
         column["number_distinct_values"] = number_distinct_values
         column["frequent_values"] = frequent_values
         # INTEGER type
-        int_rdd = col_rdd.filter(lambda x: x[0] == 'INTEGER').map(lambda x: x[1])
+        int_rdd = col_basic_rdd.filter(lambda x: x[0] == 'INTEGER').map(lambda x: x[1])
         if int_rdd.count() > 0:
             data_type = dict()
             data_type["type"] = "INTEGER"
