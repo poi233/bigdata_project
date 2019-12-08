@@ -83,14 +83,14 @@ def reduce_key(a, b):
     # value_list = a[0] + b[0]
     count = a[0] + b[0]
     if isinstance(a[1], datetime.datetime):
-        if a[1].timestamp() < b[1].timestamp:
+        if a[1].timestamp() < b[1].timestamp():
             min_value = a[1]
         else:
             min_value = b[1]
     else:
         min_value = min(a[1], b[1])
     if isinstance(a[2], datetime.datetime):
-        if a[1].timestamp() > b[2].timestamp:
+        if a[1].timestamp() > b[2].timestamp():
             max_value = a[2]
         else:
             max_value = b[2]
@@ -233,7 +233,7 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'yp1207'
+    user = 'yj1438'
     directory = 'project_pycharm'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
@@ -253,7 +253,7 @@ if __name__ == "__main__":
     part3 = data_sets[part * 2:]
     while has_not_done:
         not_done = 0
-        for dataset in part1:
+        for dataset in part2:
             with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     not_done += 1
