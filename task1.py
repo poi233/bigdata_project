@@ -223,10 +223,11 @@ if __name__ == "__main__":
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
     size_dict = dict()
-    with open("./dataset_attr.txt", "r") as size_file:
-        line = size_file.readline()
-        if len(line.split(",")) == 2 and line.split(",")[1] != "error":
-            size_dict[line.split(",")[0]] = int(line.split(",")[1])
+    if os.path.exists("./dataset_attr.txt"):
+        with open("./dataset_attr.txt", "r") as size_file:
+            line = size_file.readline()
+            if len(line.split(",")) == 2 and line.split(",")[1] != "error":
+                size_dict[line.split(",")[0]] = int(line.split(",")[1])
     # run dataset
     has_not_done = True
     part = len(data_sets) // 3
@@ -235,8 +236,8 @@ if __name__ == "__main__":
     part3 = data_sets[part * 2:]
     while has_not_done:
         not_done = 0
-        with open("./dataset_attr.txt", 'a') as attr_file:
-            for dataset in part1:
+        for dataset in part1:
+            with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     try:
                         if dataset in size_dict and size_dict[dataset] > MIN_SIZE:
@@ -250,6 +251,12 @@ if __name__ == "__main__":
                         attr_file.write("%s,error\n" % dataset)
                         print("%s has error\n" % dataset)
                 else:
+                    if dataset not in size_dict:
+                        dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
+                            data_dir + dataset + ".tsv.gz")
+                        df_count = dataset_df.count()
+                        attr_file.write("%s,%s\n" % (dataset, df_count))
+                        print("%s has %s rows" % (dataset, df_count))
                     print("%s already processed" % dataset)
         if not_done == 0:
             has_not_done = False
