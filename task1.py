@@ -6,7 +6,7 @@ import re
 from dateutil.parser import *
 from pyspark.sql import SparkSession
 
-MIN_SIZE = 1000000
+MIN_SIZE = 500000
 
 
 class MyEncoder(json.JSONEncoder):
@@ -22,53 +22,69 @@ def mkdir(path):
         os.makedirs(path)
 
 
-def get_type(x):
-    if is_null(x):
-        return "NONE"
+def type_int(x):
     int_pattern = re.compile(r'^\d+$')
-    float_pattern = re.compile(r'^\d+\.\d*$')
-    if len(x) >= 6:
-        try:
-            parse(x)
-            return "DATE/TIME"
-        except:
-            pass
     if int_pattern.match(x.replace(",", "")):
         try:
             int(x.replace(",", ""))
-            return "INTEGER"
+            return True
         except:
-            pass
+            return False
+    return False
+
+
+def type_float(x):
+    float_pattern = re.compile(r'^\d+\.\d*$')
     if float_pattern.match(x.replace(",", "")):
         try:
             float(x.replace(",", ""))
-            return "REAL"
+            return True
+        except:
+            return False
+    return False
+
+
+def type_str(x):
+    if type_int(x) or type_float(x):
+        return False
+    if len(x) < 6:
+        return True
+    try:
+        tmp = parse(x)
+        if tmp.year < 2020 and tmp.year > 1990:
+            return False
+        else:
+            return True
+    except:
+        return True
+
+
+def get_type(x):
+    if x is None or x == "":
+        return ("NONE", (1, 0, 0, 0))
+    elif type_int(x):
+        tmp = int(x.replace(",", ""))
+        return ("INTEGER", (1, tmp, tmp, tmp))
+    elif type_float(x):
+        tmp = float(x.replace(",", ""))
+        return ("REAL", (1, tmp, tmp, tmp))
+    if len(x) >= 6:
+        try:
+            tmp = parse(x)
+            if tmp.year < 2020 and tmp.year > 1990:
+                return ("DATE/TIME", (1, tmp, tmp, 0))
         except:
             pass
-    return "TEXT"
+    return ("TEXT", (1, 0, 0, len(x)))
 
-
-def is_null(x):
-    return x is None or x == ""
-
-
-def not_null(x):
-    return x is not None and x != ""
-
-
-def combine_types(a, b):
-    if a[0] == "NONE":
-        return b
-    elif b[0] == "NONE":
-        return a
-    elif a[0] == "INTEGER" and b[0] == "REAL":
-        return b
-    elif b[0] == "INTEGER" and a[0] == "REAL":
-        return a
-    elif a[1] > b[1]:
-        return a
-    else:
-        return b
+def reduce_key(a, b):
+    # [list of values], count, min, max, sum
+    # value_list = a[0] + b[0]
+    count = a[0] + b[0]
+    min_value = min(a[1], b[1])
+    max_value = max(a[2], b[2])
+    sum = a[3] + b[3]
+    return (count, min_value, max_value, sum)
 
 
 def profile(dataset):
@@ -83,91 +99,108 @@ def profile(dataset):
     df_count = dataset_df.count()
     if df_count == 0:
         print("%s has no data" % dataset)
-        return
+        return df_count
     if df_count > MIN_SIZE:
         print("%s is a large dataset skip now" % dataset)
-        return
+        return df_count
     columns = dataset_df.columns
     for column_name in columns:
+        # data init
+        column = dict()
+        column["data_types"] = []
+        # start column
         valid_column_name = column_name.replace(".", "").replace("`", "")
         dataset_df = dataset_df.withColumnRenamed(column_name, valid_column_name)
         print("start column %s" % column_name)
         # get col
         col_rdd = dataset_df.select(valid_column_name.replace(".", "")).rdd.map(lambda x: str(x[0])).cache()
-        # get col type
-        col_type = col_rdd.map(lambda x: (get_type(x), 1)) \
-            .reduceByKey(lambda a, b: a + b) \
-            .reduce(combine_types)[0]
-        print("%s type is %s" % (column_name, col_type))
+        col_basic_rdd = col_rdd.map(get_type).reduceByKey(reduce_key).cache()
         # get col stat
-        number_non_empty_cells = col_rdd.filter(not_null).count()
-        number_empty_cells = col_rdd.filter(is_null).count()
+        number_empty_cells = col_basic_rdd.filter(lambda x: x[0] == "NONE").map(lambda x: x[1][0]).collect()
+        number_empty_cells = number_empty_cells[0] if len(number_empty_cells) > 0 else 0
+        number_non_empty_cells = col_basic_rdd.filter(lambda x: x[0] != "NONE").map(lambda x: x[1][0]).reduce(
+            lambda a, b: a + b)
         number_distinct_values = col_rdd.distinct().count()
         frequent_values = col_rdd.map(lambda x: (x, 1)) \
             .reduceByKey(lambda a, b: a + b) \
             .sortBy(lambda x: -x[1]) \
             .map(lambda x: x[0]) \
             .take(5)
-        # get col stat according to type
-        data_types = dict()
-        data_types["type"] = col_type
-        data_types["count"] = number_non_empty_cells + number_empty_cells
-        if col_type == "REAL":
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "REAL" or get_type(x) == "INTEGER").map(
-                lambda x: float(x.replace(",", ""))).cache()
-            min_value = col_rdd.min()
-            max_value = col_rdd.max()
-            data_types["min_value"] = min_value if min_value is not None else None
-            data_types["max_value"] = max_value if max_value is not None else None
-            data_types["mean"] = col_rdd.mean()
-            data_types["stddev"] = col_rdd.stdev()
-        elif col_type == "INTEGER":
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "INTEGER").map(lambda x: int(x.replace(",", ""))).cache()
-            min_value = col_rdd.min()
-            max_value = col_rdd.max()
-            data_types["min_value"] = min_value if min_value is not None else None
-            data_types["max_value"] = max_value if max_value is not None else None
-            data_types["mean"] = col_rdd.mean()
-            data_types["stddev"] = col_rdd.stdev()
-        elif col_type == "TEXT":
-            col_rdd = col_rdd.filter(lambda x: x is not None).map(lambda x: x.encode("utf-8")).cache()
-            data_types["shortest_values"] = col_rdd.distinct() \
-                .takeOrdered(5, key=lambda x: (len(x), x))
-            data_types["longest_values"] = col_rdd.distinct() \
-                .takeOrdered(5, key=lambda x: (-len(x), x))
-            total_length, count = col_rdd.map(lambda x: (len(x), 1)) \
-                .reduce(lambda a, b: (a[0] + b[0], a[1] + b[1]))
-            data_types["average_length"] = float(total_length) / float(count) if count > 0 else 0
-        elif col_type == "DATE/TIME":
-            col_rdd = col_rdd.filter(lambda x: get_type(x) == "DATE/TIME").map(
-                lambda x: (str(x), parse(str(x)))).cache()
-            min_value = col_rdd.min(lambda x: x[1])
-            max_value = col_rdd.max(lambda x: x[1])
-            data_types["min_value"] = min_value[0] if min_value is not None else None
-            data_types["max_value"] = max_value[0] if max_value is not None else None
-        else:
-            data_types["type"] = "TEXT"
-            data_types["count"] = number_non_empty_cells + number_empty_cells
-            data_types["shortest_values"] = []
-            data_types["longest_values"] = []
-            data_types["average_length"] = []
-        # identify candidate for keys
-        if col_type != "DATE/TIME" and number_distinct_values == number_empty_cells + number_non_empty_cells:
-            output["key_column_candidates"].append(column_name)
-        # save data
-        column = dict()
         column["column_name"] = column_name
         column["number_non_empty_cells"] = number_non_empty_cells
         column["number_empty_cells"] = number_empty_cells
         column["number_distinct_values"] = number_distinct_values
         column["frequent_values"] = frequent_values
-        column["data_types"] = data_types
+        # INTEGER type
+        int_rdd = col_rdd.filter(lambda x: x[0] == 'INTEGER').map(lambda x: x[1])
+        if int_rdd.count() > 0:
+            data_type = dict()
+            data_type["type"] = "INTEGER"
+            count = int_rdd.map(lambda x: x[1]).collect()[0]
+            if count == number_empty_cells + number_non_empty_cells:
+                output["key_column_candidates"].append(column_name)
+            min_value = int_rdd.map(lambda x: x[1]).collect()[0]
+            max_value = int_rdd.map(lambda x: x[2]).collect()[0]
+            mean = int_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
+            std = col_rdd.filter(type_int).map(lambda x: int(x.replace(",", ""))).stdev()
+            data_type["count"] = count
+            data_type["min_value"] = min_value
+            data_type["max_value"] = max_value
+            data_type["mean"] = mean
+            data_type['stddev'] = std
+            column["data_types"].append(data_type)
+        # REAL type
+        real_rdd = col_basic_rdd.filter(lambda x: x[0] == "REAL").map(lambda x: x[1])
+        if real_rdd.count() > 0:
+            data_type = dict()
+            data_type["type"] = "REAL"
+            count = real_rdd.map(lambda x: x[1]).collect()[0]
+            min_value = real_rdd.map(lambda x: x[1]).collect()[0]
+            max_value = real_rdd.map(lambda x: x[2]).collect()[0]
+            mean = real_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
+            std = col_rdd.filter(type_float).map(lambda x: float(x.replace(",", ""))).stdev()
+            data_type["count"] = count
+            data_type["min_value"] = min_value
+            data_type["max_value"] = max_value
+            data_type["mean"] = mean
+            data_type["stddev"] = std
+            column["data_types"].append(data_type)
+        # DATE/TIME type
+        date_rdd = col_basic_rdd.filter(lambda x: x[0] == "DATE/TIME").map(lambda x: x[1])
+        if date_rdd.count() > 0:
+            data_type = dict()
+            data_type["type"] = "DATE/TIME"
+            count = date_rdd.map(lambda x: x[0]).collect()
+            min_value = date_rdd.map(lambda x: x[1]).collect()
+            max_value = date_rdd.map(lambda x: x[2]).collect()
+            data_type["count"] = count
+            data_type["min_value"] = str(min_value)
+            data_type["max_value"] = str(max_value)
+            column["data_types"].append(data_type)
+        # TEXT type
+        text_rdd = col_basic_rdd.filter(lambda x: x[0] == "TEXT").map(lambda x: x[1])
+        if text_rdd.count() > 0:
+            data_type = dict()
+            data_type["type"] = "TEXT"
+            count = text_rdd.map(lambda x: x[0]).collect()[0]
+            if count == number_empty_cells + number_non_empty_cells:
+                output["key_column_candidates"].append(column_name)
+            mean = text_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
+            data_type["count"] = count
+            data_type["average_length"] = mean
+            all_text_rdd = col_rdd.filter(type_str).cache()
+            data_type["shortest_values"] = all_text_rdd.distinct() \
+                .takeOrdered(5, key=lambda x: (len(x), x))
+            data_type["longest_values"] = all_text_rdd.distinct() \
+                .takeOrdered(5, key=lambda x: (-len(x), x))
+            column["data_types"].append(data_type)
+        # Output result
         output["columns"].append(column)
         print("column %s ok" % column_name)
-    # save to json file
-    with open("./task1_data/%s.json" % dataset, 'w') as fp:
+    with open("./task1_data_again/%s.json" % dataset, 'w+') as fp:
         json.dump(output, fp, cls=MyEncoder)
     print("%s processed OK" % dataset)
+    return df_count
 
 
 if __name__ == "__main__":
@@ -183,27 +216,41 @@ if __name__ == "__main__":
     data_sets = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(file).rdd.map(
         lambda x: x[0]).collect()
     # create result dir
-    mkdir("./task1_data")
+    mkdir("./task1_data_again")
     # run profile for each dataset
-    offset = int(len(data_sets) / 3)
-    my_dir = '/home/hj809/proj/task1_data/'
+    user = 'yp1207'
+    directory = 'project_pycharm'
+    my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
+    # load dataset size
+    size_dict = dict()
+    with open("./dataset_attr.txt", "r") as size_file:
+        line = size_file.readline()
+        if len(line.split(",")) == 2 and line.split(",")[1] != "error":
+            size_dict[line.split(",")[0]] = int(line.split(",")[1])
+    # run dataset
     has_not_done = True
-    with open("./error_dataset.txt", 'a') as error_file:
-        while has_not_done:
-            not_done = 0
-            for i in range(offset + 1):
-                if i + offset >= len(data_sets):
-                    break
-                if not os.path.exists(my_dir + data_sets[i + offset] + ".json"):
-                    not_done += 1
+    part = len(data_sets) // 3
+    part1 = data_sets[: part]
+    part2 = data_sets[part: part * 2]
+    part3 = data_sets[part * 2:]
+    while has_not_done:
+        not_done = 0
+        with open("./dataset_attr.txt", 'a') as attr_file:
+            for dataset in part1:
+                if not os.path.exists(my_dir + dataset + ".json"):
                     try:
-                        profile(data_sets[i + offset])
+                        if dataset in size_dict and size_dict[dataset] > MIN_SIZE:
+                            continue
+                        count = profile(dataset)
+                        if dataset not in size_dict:
+                            size_dict[dataset] = count
+                            attr_file.write("%s,%s\n" % (dataset, count))
+                        print("%s has %d columns" % (dataset, count))
                     except:
-                        error_file.write("%s has error\n" % data_sets[i + offset])
-                        print("%s has error\n" % data_sets[i + offset])
+                        attr_file.write("%s,error\n" % dataset)
+                        print("%s has error\n" % dataset)
                 else:
-                    print("%s already processed" % data_sets[i + offset])
-            if not_done == 0:
-                has_not_done = False
-            MIN_SIZE += 500000
-
+                    print("%s already processed" % dataset)
+        if not_done == 0:
+            has_not_done = False
+        MIN_SIZE += 500000
