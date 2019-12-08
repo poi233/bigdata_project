@@ -218,8 +218,8 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'yp1207'
-    directory = 'project_pycharm'
+    user = 'hj809'
+    directory = 'proj'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
     size_dict = dict()
@@ -236,7 +236,7 @@ if __name__ == "__main__":
     while has_not_done:
         not_done = 0
         with open("./dataset_attr.txt", 'a') as attr_file:
-            for dataset in part1:
+            for dataset in part3:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     try:
                         if dataset in size_dict and size_dict[dataset] > MIN_SIZE:
