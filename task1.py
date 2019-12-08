@@ -4,6 +4,7 @@ import os
 import re
 
 from dateutil.parser import *
+import datetime
 from pyspark.sql import SparkSession
 
 MIN_SIZE = 500000
@@ -26,7 +27,9 @@ def type_int(x):
     int_pattern = re.compile(r'^\d+$')
     if int_pattern.match(x.replace(",", "")):
         try:
-            int(x.replace(",", ""))
+            x = int(x.replace(",", ""))
+            if x > 2147483647 or x < -2147483648:
+                return False
             return True
         except:
             return False
@@ -81,8 +84,20 @@ def reduce_key(a, b):
     # [list of values], count, min, max, sum
     # value_list = a[0] + b[0]
     count = a[0] + b[0]
-    min_value = min(a[1], b[1])
-    max_value = max(a[2], b[2])
+    if isinstance(a[1], datetime.datetime):
+        if a[1].timestamp() < b[1].timestamp():
+            min_value = a[1]
+        else:
+            min_value = b[1]
+    else:
+        min_value = min(a[1], b[1])
+    if isinstance(a[2], datetime.datetime):
+        if a[1].timestamp() > b[2].timestamp():
+            max_value = a[2]
+        else:
+            max_value = b[2]
+    else:
+        max_value = min(a[2], b[2])
     sum = a[3] + b[3]
     return (count, min_value, max_value, sum)
 
@@ -97,6 +112,7 @@ def profile(dataset):
         data_dir + dataset + ".tsv.gz")
     print("%s data load ok" % dataset)
     df_count = dataset_df.count()
+    print("%s has %d rows" % (dataset, df_count))
     if df_count == 0:
         print("%s has no data" % dataset)
         return df_count
@@ -104,6 +120,7 @@ def profile(dataset):
         print("%s is a large dataset skip now" % dataset)
         return df_count
     columns = dataset_df.columns
+    print("%s has %d columns" % (dataset, len(columns)))
     for column_name in columns:
         # data init
         column = dict()
@@ -136,7 +153,7 @@ def profile(dataset):
         if int_rdd.count() > 0:
             data_type = dict()
             data_type["type"] = "INTEGER"
-            count = int_rdd.map(lambda x: x[1]).collect()[0]
+            count = int_rdd.map(lambda x: x[0]).collect()[0]
             if count == number_empty_cells + number_non_empty_cells:
                 output["key_column_candidates"].append(column_name)
             min_value = int_rdd.map(lambda x: x[1]).collect()[0]
@@ -154,7 +171,7 @@ def profile(dataset):
         if real_rdd.count() > 0:
             data_type = dict()
             data_type["type"] = "REAL"
-            count = real_rdd.map(lambda x: x[1]).collect()[0]
+            count = real_rdd.map(lambda x: x[0]).collect()[0]
             min_value = real_rdd.map(lambda x: x[1]).collect()[0]
             max_value = real_rdd.map(lambda x: x[2]).collect()[0]
             mean = real_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
@@ -218,15 +235,18 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'hj809'
-    directory = 'proj'
+    user = 'yp1207'
+    directory = 'project_pycharm'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
     size_dict = dict()
-    with open("./dataset_attr.txt", "r") as size_file:
-        line = size_file.readline()
-        if len(line.split(",")) == 2 and line.split(",")[1] != "error":
-            size_dict[line.split(",")[0]] = int(line.split(",")[1])
+    if os.path.exists("./dataset_attr.txt"):
+        with open("./dataset_attr.txt", "r") as size_file:
+            for line in size_file:
+                if len(line.split(",")) == 2 and "error" not in line.split(",")[1]:
+                    size_dict[line.split(",")[0]] = int(line.split(",")[1])
+                else:
+                    size_dict[line.split(",")[0]] = "error"
     # run dataset
     has_not_done = True
     part = len(data_sets) // 3
@@ -235,9 +255,13 @@ if __name__ == "__main__":
     part3 = data_sets[part * 2:]
     while has_not_done:
         not_done = 0
-        with open("./dataset_attr.txt", 'a') as attr_file:
-            for dataset in part3:
+        for dataset in part1:
+            with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
+                    not_done += 1
+                    if dataset in size_dict and size_dict[dataset] == 'error':
+                        print("%s has error\n" % dataset)
+                        continue
                     try:
                         if dataset in size_dict and size_dict[dataset] > MIN_SIZE:
                             continue
@@ -245,11 +269,15 @@ if __name__ == "__main__":
                         if dataset not in size_dict:
                             size_dict[dataset] = count
                             attr_file.write("%s,%s\n" % (dataset, count))
-                        print("%s has %d columns" % (dataset, count))
                     except:
                         attr_file.write("%s,error\n" % dataset)
                         print("%s has error\n" % dataset)
                 else:
+                    if dataset not in size_dict:
+                        dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(data_dir + dataset + ".tsv.gz")
+                        df_count = dataset_df.count()
+                        attr_file.write("%s,%s\n" % (dataset, df_count))
+                        print("%s has %s rows" % (dataset, df_count))
                     print("%s already processed" % dataset)
         if not_done == 0:
             has_not_done = False
