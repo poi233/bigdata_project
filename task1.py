@@ -97,6 +97,7 @@ def profile(dataset):
         data_dir + dataset + ".tsv.gz")
     print("%s data load ok" % dataset)
     df_count = dataset_df.count()
+    print("%s has %d rows" % (dataset, df_count))
     if df_count == 0:
         print("%s has no data" % dataset)
         return df_count
@@ -218,7 +219,7 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'yj1438'
+    user = 'yp1207'
     directory = 'project_pycharm'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
@@ -228,6 +229,8 @@ if __name__ == "__main__":
             for line in size_file:
                 if len(line.split(",")) == 2 and "error" not in line.split(",")[1]:
                     size_dict[line.split(",")[0]] = int(line.split(",")[1])
+                else:
+                    size_dict[line.split(",")[0]] = "error"
     # run dataset
     has_not_done = True
     part = len(data_sets) // 3
@@ -240,6 +243,9 @@ if __name__ == "__main__":
             with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     not_done += 1
+                    if dataset in size_dict and size_dict[dataset] == 'error':
+                        print("%s has error\n" % dataset)
+                        continue
                     try:
                         if dataset in size_dict and size_dict[dataset] > MIN_SIZE:
                             continue
@@ -247,7 +253,6 @@ if __name__ == "__main__":
                         if dataset not in size_dict:
                             size_dict[dataset] = count
                             attr_file.write("%s,%s\n" % (dataset, count))
-                        print("%s has %d rows" % (dataset, count))
                     except:
                         attr_file.write("%s,error\n" % dataset)
                         print("%s has error\n" % dataset)
