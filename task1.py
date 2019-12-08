@@ -245,7 +245,7 @@ if __name__ == "__main__":
                         if dataset not in size_dict:
                             size_dict[dataset] = count
                             attr_file.write("%s,%s\n" % (dataset, count))
-                        print("%s has %d columns" % (dataset, count))
+                        print("%s has %d rows" % (dataset, count))
                     except:
                         attr_file.write("%s,error\n" % dataset)
                         print("%s has error\n" % dataset)
