@@ -218,7 +218,7 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'yp1207'
+    user = 'yj1438'
     directory = 'project_pycharm'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     if os.path.exists("./dataset_attr.txt"):
         with open("./dataset_attr.txt", "r") as size_file:
             for line in size_file:
-                if len(line.split(",")) == 2 and "error" in line.split(",")[1]:
+                if len(line.split(",")) == 2 and "error" not in line.split(",")[1]:
                     size_dict[line.split(",")[0]] = int(line.split(",")[1])
     # run dataset
     has_not_done = True
