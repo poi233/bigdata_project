@@ -4,6 +4,7 @@ import os
 import re
 
 from dateutil.parser import *
+import datetime
 from pyspark.sql import SparkSession
 
 MIN_SIZE = 500000
@@ -81,8 +82,20 @@ def reduce_key(a, b):
     # [list of values], count, min, max, sum
     # value_list = a[0] + b[0]
     count = a[0] + b[0]
-    min_value = min(a[1], b[1])
-    max_value = max(a[2], b[2])
+    if isinstance(a[1], datetime.datetime):
+        if a[1].timestamp() < b[1].timestamp:
+            min_value = a[1]
+        else:
+            min_value = b[1]
+    else:
+        min_value = min(a[1], b[1])
+    if isinstance(a[2], datetime.datetime):
+        if a[1].timestamp() > b[2].timestamp:
+            max_value = a[2]
+        else:
+            max_value = b[2]
+    else:
+        max_value = min(a[2], b[2])
     sum = a[3] + b[3]
     return (count, min_value, max_value, sum)
 
@@ -259,8 +272,7 @@ if __name__ == "__main__":
                         print("%s has error\n" % dataset)
                 else:
                     if dataset not in size_dict:
-                        dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
-                            data_dir + dataset + ".tsv.gz")
+                        dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(data_dir + dataset + ".tsv.gz")
                         df_count = dataset_df.count()
                         attr_file.write("%s,%s\n" % (dataset, df_count))
                         print("%s has %s rows" % (dataset, df_count))
