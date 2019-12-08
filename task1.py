@@ -105,6 +105,7 @@ def profile(dataset):
         print("%s is a large dataset skip now" % dataset)
         return df_count
     columns = dataset_df.columns
+    print("%s has %d columns" % (dataset, len(columns)))
     for column_name in columns:
         # data init
         column = dict()
