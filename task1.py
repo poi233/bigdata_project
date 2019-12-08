@@ -239,6 +239,7 @@ if __name__ == "__main__":
         for dataset in part1:
             with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
+                    not_done += 1
                     try:
                         if dataset in size_dict and size_dict[dataset] > MIN_SIZE:
                             continue
