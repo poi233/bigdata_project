@@ -27,7 +27,9 @@ def type_int(x):
     int_pattern = re.compile(r'^\d+$')
     if int_pattern.match(x.replace(",", "")):
         try:
-            int(x.replace(",", ""))
+            x = int(x.replace(",", ""))
+            if x > 2147483647 or x < -2147483648:
+                return False
             return True
         except:
             return False
@@ -151,7 +153,7 @@ def profile(dataset):
         if int_rdd.count() > 0:
             data_type = dict()
             data_type["type"] = "INTEGER"
-            count = int_rdd.map(lambda x: x[1]).collect()[0]
+            count = int_rdd.map(lambda x: x[0]).collect()[0]
             if count == number_empty_cells + number_non_empty_cells:
                 output["key_column_candidates"].append(column_name)
             min_value = int_rdd.map(lambda x: x[1]).collect()[0]
@@ -169,7 +171,7 @@ def profile(dataset):
         if real_rdd.count() > 0:
             data_type = dict()
             data_type["type"] = "REAL"
-            count = real_rdd.map(lambda x: x[1]).collect()[0]
+            count = real_rdd.map(lambda x: x[0]).collect()[0]
             min_value = real_rdd.map(lambda x: x[1]).collect()[0]
             max_value = real_rdd.map(lambda x: x[2]).collect()[0]
             mean = real_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
@@ -233,7 +235,7 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'yj1438'
+    user = 'yp1207'
     directory = 'project_pycharm'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
@@ -253,7 +255,7 @@ if __name__ == "__main__":
     part3 = data_sets[part * 2:]
     while has_not_done:
         not_done = 0
-        for dataset in part2:
+        for dataset in part1:
             with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     not_done += 1
