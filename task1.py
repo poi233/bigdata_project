@@ -225,9 +225,9 @@ if __name__ == "__main__":
     size_dict = dict()
     if os.path.exists("./dataset_attr.txt"):
         with open("./dataset_attr.txt", "r") as size_file:
-            line = size_file.readline()
-            if len(line.split(",")) == 2 and line.split(",")[1] != "error":
-                size_dict[line.split(",")[0]] = int(line.split(",")[1])
+            for line in size_file:
+                if len(line.split(",")) == 2 and line.split(",")[1] != "error":
+                    size_dict[line.split(",")[0]] = int(line.split(",")[1])
     # run dataset
     has_not_done = True
     part = len(data_sets) // 3
