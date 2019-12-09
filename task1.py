@@ -74,7 +74,7 @@ def get_type(x):
     if len(x) >= 6:
         try:
             tmp = parse(x)
-            if tmp.year < 2020 and tmp.year > 1990:
+            if tmp.year < 2020 and tmp.year > 1990 and tmp.hour < 24 and tmp.hour >= 0:
                 return ("DATE/TIME", (1, tmp, tmp, 0))
         except:
             pass
