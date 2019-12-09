@@ -109,7 +109,7 @@ def profile(dataset):
     output["columns"] = []
     output["key_column_candidates"] = []
     dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
-        data_dir + dataset + ".tsv.gz")
+        data_dir + dataset + ".tsv.gz").cache()
     print("%s data load ok" % dataset)
     df_count = dataset_df.count()
     print("%s has %d rows" % (dataset, df_count))
@@ -235,7 +235,7 @@ if __name__ == "__main__":
     # create result dir
     mkdir("./task1_data_again")
     # run profile for each dataset
-    user = 'yp1207'
+    user = 'yj1438'
     directory = 'project_pycharm'
     my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
     # load dataset size
@@ -255,7 +255,7 @@ if __name__ == "__main__":
     part3 = data_sets[part * 2:]
     while has_not_done:
         not_done = 0
-        for dataset in part1:
+        for dataset in part2:
             with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     not_done += 1
