@@ -109,7 +109,7 @@ def profile(dataset):
     output["columns"] = []
     output["key_column_candidates"] = []
     dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
-        data_dir + dataset + ".tsv.gz")
+        data_dir + dataset + ".tsv.gz").cache()
     print("%s data load ok" % dataset)
     df_count = dataset_df.count()
     print("%s has %d rows" % (dataset, df_count))
