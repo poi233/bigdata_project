@@ -74,7 +74,7 @@ def get_type(x):
     if len(x) >= 6:
         try:
             tmp = parse(x)
-            if tmp.year < 2020 and tmp.year > 1990:
+            if tmp.year < 2020 and tmp.year > 1990 and tmp.hour < 24 and tmp.hour >= 0:
                 return ("DATE/TIME", (1, tmp, tmp, 0))
         except:
             pass
@@ -84,20 +84,24 @@ def reduce_key(a, b):
     # [list of values], count, min, max, sum
     # value_list = a[0] + b[0]
     count = a[0] + b[0]
-    if isinstance(a[1], datetime.datetime):
-        if a[1].timestamp() < b[1].timestamp():
-            min_value = a[1]
+    try:
+        if isinstance(a[1], datetime.datetime):
+            if a[1].timestamp() < b[1].timestamp():
+                min_value = a[1]
+            else:
+                min_value = b[1]
         else:
-            min_value = b[1]
-    else:
-        min_value = min(a[1], b[1])
-    if isinstance(a[2], datetime.datetime):
-        if a[1].timestamp() > b[2].timestamp():
-            max_value = a[2]
+            min_value = min(a[1], b[1])
+        if isinstance(a[2], datetime.datetime):
+            if a[1].timestamp() > b[2].timestamp():
+                max_value = a[2]
+            else:
+                max_value = b[2]
         else:
-            max_value = b[2]
-    else:
-        max_value = min(a[2], b[2])
+            max_value = min(a[2], b[2])
+    except:
+        min_value = a[1]
+        max_value = a[2]
     sum = a[3] + b[3]
     return (count, min_value, max_value, sum)
 
