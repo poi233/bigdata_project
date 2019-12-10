@@ -257,8 +257,8 @@ def check_semantic_type(input):
     if is_type_location(x):
         predict_types.append(('location_type', input[1]))
     # Person Name
-    # if is_person_name(x):
-    #     predict_types.append(('person_name', input[1]))
+    if is_person_name(x):
+        predict_types.append(('person_name', input[1]))
     if len(predict_types) == 0:
         predict_types.append(('other', input[1]))
     return predict_types
@@ -341,7 +341,7 @@ def is_zip(x):
 
 
 def is_person_name(x):
-    return binary_search(Last_names, x) or binary_search(First_names, x)
+    return binary_search(Last_names, x.upper()) or binary_search(First_names, x.upper())
 
 
 def is_city(x):
