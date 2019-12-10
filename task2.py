@@ -77,6 +77,19 @@ Last_names.sort()
 First_names = First_names.split(",")
 First_names.sort()
 
+# filter car_make strings in person names
+
+
+def filterHelper(input):
+    if binary_search(car_make, input):
+        return False
+    else:
+        return True
+
+
+First_names = (filterHelper, First_names)
+Last_names = (filterHelper, Last_names)
+
 def binary_search(source_list, target):
     left = 0
     right = len(source_list) - 1
