@@ -1,6 +1,6 @@
 column_name,true_label
 2bmr-jdsv.DBA,business_name
-2bnn-yakx.Vehicle_Body_Type,other
+2bnn-yakx.Vehicle_Body_Type,vehicle_type
 2bnn-yakx.Vehicle_Color,color
 2bnn-yakx.Vehicle_Make,car_make
 2sps-j9st.PERSON_FIRST_NAME,person_name
@@ -111,7 +111,7 @@ erm2-nwe9.Park_Facility_Name,park_playground|school_name
 f3cg-u8bv.Agency,city_agency
 f4rp-2kvy.Street,street_name|address
 f42p-xqaa.BROOKLYN___COOPERATIVES_COMPARABLE_PROPERTIES___Building_Classification,building_classification
-faiq-9dfq.Vehicle_Body_Type,other
+faiq-9dfq.Vehicle_Body_Type,vehicle_type
 faiq-9dfq.Vehicle_Color,color
 fb26-34vu.CORE_SUBJECT__MS_CORE_and_9_12_ONLY_,subject_in_school
 fbaw-uq4e.Location_1,lat_lon_cord

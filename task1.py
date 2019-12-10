@@ -158,7 +158,7 @@ def profile(dataset):
             data_type = dict()
             data_type["type"] = "INTEGER"
             count = int_rdd.map(lambda x: x[0]).collect()[0]
-            if count == number_empty_cells + number_non_empty_cells:
+            if number_empty_cells == 0 and number_distinct_values == count:
                 output["key_column_candidates"].append(column_name)
             min_value = int_rdd.map(lambda x: x[1]).collect()[0]
             max_value = int_rdd.map(lambda x: x[2]).collect()[0]
@@ -204,7 +204,7 @@ def profile(dataset):
             data_type = dict()
             data_type["type"] = "TEXT"
             count = text_rdd.map(lambda x: x[0]).collect()[0]
-            if count == number_empty_cells + number_non_empty_cells:
+            if number_non_empty_cells == 0 and count == number_distinct_values:
                 output["key_column_candidates"].append(column_name)
             mean = text_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
             data_type["count"] = count
