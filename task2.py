@@ -26,7 +26,7 @@ car_types = "FIRE,CONV,SEDN,SUBN,4DSD,2DSD,H/WH,ATV,MCY,H/IN,TRAV,MOBL,TR/E,T/CR
 building_classification_pattern = "WALK-UP,ELEVATOR,WALK-UP,CONDOPS".lower()
 subjects = "ENGLISH,MATH,SCIENCE,SOCIAL STUDIES,ALGEBRA,CHEMISTRY,EARTH SCIENCE,ECONOMICS,GEOMETRY,HISTORY,ENVIRONMENT,PHYSICS,US GOVERNMENT".lower()
 study_areas = "ANIMAL SCIENCE,ARCHITECTURE,BUSINESS.COMMUNICATIONS,COMPUTER SCIENCE & TECHNOLOGY,COSMETOLOGY,CULINARY ARTS,ENGINEERING,ENVIRONMENTAL SCIENCE,ENVIRONMENTAL SCIENCE,FILM/VIDEO,HEALTH PROFESSIONS,HOSPITALITY, TRAVEL AND TOURISM,HUMANITIES & INTERDISCIPLINARY,JROTC,LAW & GOVERNMENT,PERFORMING ARTS,PERFORMING ARTS/VISUAL ART & DESIGN,VISUAL ART & DESIGN,SCIENCE & MATH,TEACHING,ZONED".lower()
-location_types = "accounting,airport,amusement_park,aquarium,art_gallery,atm,bakery,bank,bar,beauty_salon,bicycle_store,book_store,bowling_alley,bus_station,cafe,campground,car_dealer,car_rental,car_repair,car_wash,casino,cemetery,church,city_hall,clothing_store,convenience_store,courthouse,dentist,department_store,doctor,drugstore,electrician,electronics_store,embassy,fire_station,florist,funeral_home,furniture_store,gas_station,grocery_or_supermarket,gym,hair_care,hardware_store,hindu_temple,home_goods_store,hospital,insurance_agency,jewelry_store,laundry,lawyer,library,light_rail_station,liquor_store,local_government_office,locksmith,lodging,meal_delivery,meal_takeaway,mosque,movie_rental,movie_theater,moving_company,museum,night_club,painter,park,parking,pet_store,pharmacy,physiotherapist,plumber,police,post_office,primary_school,real_estate_agency,restaurant,roofing_contractor,rv_park,school,secondary_school,shoe_store,shopping_mall,spa,stadium,storage,store,subway_station,supermarket,synagogue,taxi_stand,tourist_attraction,train_station,transit_station,travel_agency,university,veterinary_care,zoo, ABANDONED,BUILDING,AIRPORT,TERMINAL,ATM,BANK,BAR/NIGHT,CLUB,BEAUTY,&,NAIL,SALON,BOOK/CARD,BRIDGE,BUS,(NYC,TRANSIT),BUS,(OTHER),BUS,STOP,BUS,TERMINAL,CANDY,STORE,CEMETERY,CHAIN,STORE,CHECK,CASHING,BUSINESS,CHURCH,CLOTHING/BOUTIQUE,COMMERCIAL,BUILDING,CONSTRUCTION,SITE,DEPARTMENT,STORE,DOCTOR/DENTIST,OFFICE,DRUG,STORE,DRY,CLEANER/LAUNDRY,FACTORY/WAREHOUSE,FAST,FOOD,FERRY/FERRY,TERMINAL,FOOD,SUPERMARKET,GAS,STATION,GROCERY/BODEGA,GYM/FITNESS,FACILITY,HIGHWAY/PARKWAY,HOSPITAL,HOTEL/MOTEL,JEWELRY,LIQUOR,STORE,LOAN,COMPANY,MAILBOX,INSIDE,MAILBOX,OUTSIDE,MARINA/PIER,MOSQUE,OPEN,AREAS,(OPEN,LOTS),OTHER,OTHER,HOUSE,OF,WORSHIP,PARK/PLAYGROUND,PARKING,LOT/GARAGE,(PRIVATE),PARKING,LOT/GARAGE,(PUBLIC),PHOTO/COPY,PRIVATE/PAROCHIAL,SCHOOL,PUBLIC,BUILDING,PUBLIC,SCHOOL,RESIDENCE,-,APT.,HOUSE,RESIDENCE,-,PUBLIC,HOUSING,RESIDENCE-HOUSE,RESTAURANT/DINER,SHOE,SMALL,MERCHANT,SOCIAL,CLUB/POLICY,STORAGE,FACILITY,STORE,UNCLASSIFIED,STREET,SYNAGOGUE,TAXI,(LIVERY,LICENSED),TAXI,(YELLOW,LICENSED),TAXI/LIVERY,(UNLICENSED),TELECOMM.,STORE,TRAMWAY,TRANSIT,-,NYC,SUBWAY,TRANSIT,FACILITY,(OTHER),TUNNEL,VARIETY,STORE,VIDEO,STORE"
+location_types = "airport,amusement_park,aquarium,art_gallery,atm,bakery,bank,bar,beauty_salon,bicycle_store,book_store,bowling_alley,bus_station,cafe,campground,car_dealer,car_rental,car_repair,car_wash,casino,cemetery,church,city_hall,clothing_store,convenience_store,courthouse,dentist,department_store,doctor,drugstore,electrician,electronics_store,embassy,fire_station,florist,funeral_home,furniture_store,gas_station,grocery_or_supermarket,gym,hair_care,hardware_store,hindu_temple,home_goods_store,hospital,insurance_agency,jewelry_store,laundry,lawyer,library,light_rail_station,liquor_store,local_government_office,locksmith,lodging,meal_delivery,meal_takeaway,mosque,movie_rental,movie_theater,moving_company,museum,night_club,painter,park,parking,pet_store,pharmacy,physiotherapist,plumber,police,post_office,primary_school,real_estate_agency,restaurant,roofing_contractor,rv_park,school,secondary_school,shoe_store,shopping_mall,spa,stadium,storage,store,subway_station,supermarket,synagogue,taxi_stand,tourist_attraction,train_station,transit_station,travel_agency,university,veterinary_care,zoo, ABANDONED,BUILDING,AIRPORT,TERMINAL,ATM,BANK,BAR/NIGHT,CLUB,BEAUTY,&,NAIL,SALON,BOOK/CARD,BRIDGE,BUS,(NYC,TRANSIT),BUS,(OTHER),BUS,STOP,BUS,TERMINAL,CANDY,STORE,CEMETERY,CHAIN,STORE,CHECK,CASHING,BUSINESS,CHURCH,CLOTHING/BOUTIQUE,COMMERCIAL,BUILDING,CONSTRUCTION,SITE,DEPARTMENT,STORE,DOCTOR/DENTIST,OFFICE,DRUG,STORE,DRY,CLEANER/LAUNDRY,FACTORY/WAREHOUSE,FAST,FOOD,FERRY/FERRY,TERMINAL,FOOD,SUPERMARKET,GAS,STATION,GROCERY/BODEGA,GYM/FITNESS,FACILITY,HIGHWAY/PARKWAY,HOSPITAL,HOTEL/MOTEL,JEWELRY,LIQUOR,STORE,LOAN,COMPANY,MAILBOX,INSIDE,MAILBOX,OUTSIDE,MARINA/PIER,MOSQUE,OPEN,AREAS,(OPEN,LOTS),OTHER,OTHER,HOUSE,OF,WORSHIP,PARK/PLAYGROUND,PARKING,LOT/GARAGE,(PRIVATE),PARKING,LOT/GARAGE,(PUBLIC),PHOTO/COPY,PRIVATE/PAROCHIAL,SCHOOL,PUBLIC,BUILDING,PUBLIC,SCHOOL,RESIDENCE,APT.,HOUSE,RESIDENCE,PUBLIC,HOUSING,RESIDENCE-HOUSE,RESTAURANT/DINER,SHOE,SMALL,MERCHANT,SOCIAL,CLUB/POLICY,STORAGE,FACILITY,STORE,UNCLASSIFIED,STREET,SYNAGOGUE,TAXI,(LIVERY,LICENSED),TAXI,(YELLOW,LICENSED),TAXI/LIVERY,(UNLICENSED),TELECOMM.,STORE,TRAMWAY,TRANSIT,NYC,SUBWAY,TRANSIT,FACILITY,(OTHER),TUNNEL,VARIETY,STORE,VIDEO,STORE".lower()
 agencies = "ACS,BIC,CCHR,CCRB,DCA,DCAS,DCLA,DCP,DDC,DEP,DFTA,DHS,DOB,DOC,DOE,DOF,DOHMH,DOI,DOITT,DOP,DORIS,DOT,DPR,DSNY,DSS,DYCD,EDC,FDNY,HPD,HRA,LAW,LPC,MOCJ,MOCS,NYCEM,NYPD,OATH,SBS,TLC"
 car_make = "ABARTH,ALFA,ROMEO,ASTON,MARTIN,AUSTIN,BEDFORD,BENTLEY,BOLWELL,BUFORI,CADILLAC,CATERHAM,CHERY,CHEVROLET,CHRYSLER,CITROEN,DAEWOO,DAIHATSU,DODGE,FIAT,GEELY,GREAT,WALL,HINO,HUMMER,INFINITI,ISUZU,JAGUAR,JEEP,LAND,ROVER,LEXUS,LOTUS,MINI,MITSUBISHI,OPEL,PORSCHE,PROTON,RANGE,ROVER,RENAULT,SAAB,SKODA,SSANGYONG,SUBARU,SUZUKI,TATA,VOLVO"
 # list of 1000 most popular surnames in USA
@@ -67,28 +67,19 @@ subjects.sort()
 study_areas = study_areas.split(",")
 study_areas.sort()
 location_types = location_types.split(",")
+location_types = list(set(location_types) - set(subjects) - set(study_areas) - set(car_types))
 location_types.sort()
 agencies = agencies.split(",")
 agencies.sort()
 car_make = car_make.split(",")
 car_make.sort()
 Last_names = Last_names.split(",")
+Last_names = list(set(Last_names) - set(car_make))
 Last_names.sort()
 First_names = First_names.split(",")
+First_names = list(set(First_names) - set(car_make))
 First_names.sort()
 
-# filter car_make strings in person names
-
-
-def filterHelper(input):
-    if binary_search(car_make, input):
-        return False
-    else:
-        return True
-
-
-First_names = (filterHelper, First_names)
-Last_names = (filterHelper, Last_names)
 
 def binary_search(source_list, target):
     left = 0
@@ -183,7 +174,7 @@ def get_type_from_col_name(x):
     if 'vehicle' in col and 'type' in col:
         return 'vehicle_type'
     # type of location
-    if 'location' in col and 'type' in col:
+    if 'prem' in col and 'typ' in col:
         return 'location_type'
     # parks/playground
     if 'park' in col and 'name' in col:
@@ -198,7 +189,6 @@ def check_semantic_type(input):
         predict_types.append(('other', 1))
         return predict_types
     x = str(input[0]).strip().lower()
-
     # Regular Expression
     # Phone Number
     if is_phone(x):
@@ -212,7 +202,6 @@ def check_semantic_type(input):
     # websites
     if is_website(x):
         predict_types.append(('website', input[1]))
-
     # External Check (small)
     # building classification
     if is_building_classification(x):
@@ -244,7 +233,6 @@ def check_semantic_type(input):
     # Street Name
     if is_street(x):
         predict_types.append(('street_name', input[1]))
-
     # External Check (large)
     # Neighborhood
     if is_neiborhood(x):
@@ -426,10 +414,6 @@ def get_predicted_labels(column_name_type, column_data_type, with_column_name=Tr
         count_total += type[1]
         if type[0] != 'other':
             count_without_other += type[1]
-    # if count of 'other' is larger than 80%, label this column as 'other'
-    # if count_total - count_without_other >= count_total * 0.8:
-    #     return 'other'
-    # get all labels with rate of >30% as well as the label from column_name
     res = set()
     if with_column_name:
         res.add(column_name_type)
@@ -527,3 +511,5 @@ if __name__ == "__main__":
         fp.write("column_name,predict_label_without_column_name\n")
         for line in csv_result_without_column_name:
             fp.write(line + "\n")
+
+# jq -s '{ datasets: map(.) }' 'task1.json'
