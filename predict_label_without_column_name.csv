@@ -179,7 +179,7 @@ a2pm-dj2w.Borough,borough|neighborhood
 jz4z-kudi.Respondent_Address__City_,borough|neighborhood
 as69-ew8f.TruckMake,car_make
 sxx4-xhzg.Park_Site_Name,park_playground
-6bgk-3dad.RESPONDENT_CITY,borough|neighborhood
+6bgk-3dad.RESPONDENT_CITY,neighborhood
 dm9a-ab7w.AUTH_REP_FIRST_NAME,business_name
 ipu4-2q9a.Site_Safety_Mgr_s_Last_Name,color|vehicle_type
 2bnn-yakx.Vehicle_Body_Type,vehicle_type
