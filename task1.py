@@ -113,9 +113,9 @@ def profile(dataset):
     output["columns"] = []
     output["key_column_candidates"] = []
     dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
-        data_dir + dataset + ".tsv.gz").sample(withReplacement=True, fraction=0.001).cache()
+        data_dir + dataset + ".tsv.gz").sample(withReplacement=True, fraction=0.0001).cache()
     print("%s data load ok" % dataset)
-    df_count = dataset_df.count()
+    df_count = dataset_df.count() * 10000
     print("%s has %d rows" % (dataset, df_count))
     if df_count == 0:
         print("%s has no data" % dataset)
@@ -148,8 +148,8 @@ def profile(dataset):
             .map(lambda x: x[0]) \
             .take(5)
         column["column_name"] = column_name
-        column["number_non_empty_cells"] = number_non_empty_cells
-        column["number_empty_cells"] = number_empty_cells
+        column["number_non_empty_cells"] = number_non_empty_cells * 10000
+        column["number_empty_cells"] = number_empty_cells * 10000
         column["number_distinct_values"] = number_distinct_values
         column["frequent_values"] = frequent_values
         # INTEGER type
@@ -164,7 +164,7 @@ def profile(dataset):
             max_value = int_rdd.map(lambda x: x[2]).collect()[0]
             mean = int_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
             std = col_rdd.filter(type_int).map(lambda x: int(x.replace(",", ""))).stdev()
-            data_type["count"] = count
+            data_type["count"] = count * 10000
             data_type["min_value"] = min_value
             data_type["max_value"] = max_value
             data_type["mean"] = mean
@@ -180,7 +180,7 @@ def profile(dataset):
             max_value = real_rdd.map(lambda x: x[2]).collect()[0]
             mean = real_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
             std = col_rdd.filter(type_float).map(lambda x: float(x.replace(",", ""))).stdev()
-            data_type["count"] = count
+            data_type["count"] = count * 10000
             data_type["min_value"] = min_value
             data_type["max_value"] = max_value
             data_type["mean"] = mean
@@ -194,7 +194,7 @@ def profile(dataset):
             count = date_rdd.map(lambda x: x[0]).collect()
             min_value = date_rdd.map(lambda x: x[1]).collect()
             max_value = date_rdd.map(lambda x: x[2]).collect()
-            data_type["count"] = count
+            data_type["count"] = count * 10000
             data_type["min_value"] = str(min_value)
             data_type["max_value"] = str(max_value)
             column["data_types"].append(data_type)
@@ -207,7 +207,7 @@ def profile(dataset):
             if col_basic_rdd.count() == 1 and number_non_empty_cells == 0 and count == number_distinct_values:
                 output["key_column_candidates"].append(column_name)
             mean = text_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
-            data_type["count"] = count
+            data_type["count"] = count * 10000
             data_type["average_length"] = mean
             all_text_rdd = col_rdd.filter(type_str).cache()
             data_type["shortest_values"] = all_text_rdd.distinct() \
@@ -259,7 +259,7 @@ if __name__ == "__main__":
     part3 = data_sets[part * 2:]
     while has_not_done:
         not_done = 0
-        for dataset in part1:
+        for dataset in data_sets:
             with open("./dataset_attr.txt", 'a') as attr_file:
                 if not os.path.exists(my_dir + dataset + ".json"):
                     not_done += 1
