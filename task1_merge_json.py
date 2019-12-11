@@ -11,7 +11,7 @@ class MyEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 
-path = "./task1_data_again/"
+path = "./task1_data/"
 files = os.listdir(path)
 output = dict()
 output['datasets'] = []
