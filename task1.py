@@ -1,10 +1,10 @@
 # -*- coding: UTF-8 -*-
+import datetime
 import json
 import os
 import re
 
 from dateutil.parser import *
-import datetime
 from pyspark.sql import SparkSession
 
 MIN_SIZE = 500000
@@ -80,6 +80,7 @@ def get_type(x):
             pass
     return ("TEXT", (1, 0, 0, len(x)))
 
+
 def reduce_key(a, b):
     # [list of values], count, min, max, sum
     # value_list = a[0] + b[0]
@@ -113,9 +114,9 @@ def profile(dataset):
     output["columns"] = []
     output["key_column_candidates"] = []
     dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
-        data_dir + dataset + ".tsv.gz").sample(withReplacement=True, fraction=0.0001).cache()
+        data_dir + dataset + ".tsv.gz").cache()
     print("%s data load ok" % dataset)
-    df_count = dataset_df.count() * 10000
+    df_count = dataset_df.count()
     print("%s has %d rows" % (dataset, df_count))
     if df_count == 0:
         print("%s has no data" % dataset)
@@ -148,8 +149,8 @@ def profile(dataset):
             .map(lambda x: x[0]) \
             .take(5)
         column["column_name"] = column_name
-        column["number_non_empty_cells"] = number_non_empty_cells * 10000
-        column["number_empty_cells"] = number_empty_cells * 10000
+        column["number_non_empty_cells"] = number_non_empty_cells
+        column["number_empty_cells"] = number_empty_cells
         column["number_distinct_values"] = number_distinct_values
         column["frequent_values"] = frequent_values
         # INTEGER type
@@ -164,7 +165,7 @@ def profile(dataset):
             max_value = int_rdd.map(lambda x: x[2]).collect()[0]
             mean = int_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
             std = col_rdd.filter(type_int).map(lambda x: int(x.replace(",", ""))).stdev()
-            data_type["count"] = count * 10000
+            data_type["count"] = count
             data_type["min_value"] = min_value
             data_type["max_value"] = max_value
             data_type["mean"] = mean
@@ -180,7 +181,7 @@ def profile(dataset):
             max_value = real_rdd.map(lambda x: x[2]).collect()[0]
             mean = real_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
             std = col_rdd.filter(type_float).map(lambda x: float(x.replace(",", ""))).stdev()
-            data_type["count"] = count * 10000
+            data_type["count"] = count
             data_type["min_value"] = min_value
             data_type["max_value"] = max_value
             data_type["mean"] = mean
@@ -194,7 +195,7 @@ def profile(dataset):
             count = date_rdd.map(lambda x: x[0]).collect()
             min_value = date_rdd.map(lambda x: x[1]).collect()
             max_value = date_rdd.map(lambda x: x[2]).collect()
-            data_type["count"] = count * 10000
+            data_type["count"] = count
             data_type["min_value"] = str(min_value)
             data_type["max_value"] = str(max_value)
             column["data_types"].append(data_type)
@@ -207,7 +208,7 @@ def profile(dataset):
             if col_basic_rdd.count() == 1 and number_non_empty_cells == 0 and count == number_distinct_values:
                 output["key_column_candidates"].append(column_name)
             mean = text_rdd.map(lambda x: float(x[3]) / float(x[0])).collect()[0]
-            data_type["count"] = count * 10000
+            data_type["count"] = count
             data_type["average_length"] = mean
             all_text_rdd = col_rdd.filter(type_str).cache()
             data_type["shortest_values"] = all_text_rdd.distinct() \
@@ -218,7 +219,7 @@ def profile(dataset):
         # Output result
         output["columns"].append(column)
         print("column %s ok" % column_name)
-    with open("./task1_data_again/%s.json" % dataset, 'w+') as fp:
+    with open("./task1_data/%s.json" % dataset, 'w+') as fp:
         json.dump(output, fp, cls=MyEncoder)
     print("%s processed OK" % dataset)
     return df_count
@@ -237,11 +238,11 @@ if __name__ == "__main__":
     data_sets = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(file).rdd.map(
         lambda x: x[0]).collect()
     # create result dir
-    mkdir("./task1_data_again")
+    mkdir("./task1_data")
     # run profile for each dataset
     user = 'yp1207'
     directory = 'project_pycharm'
-    my_dir = '/home/%s/%s/task1_data_again/' % (user, directory)
+    my_dir = '/home/%s/%s/task1_data/' % (user, directory)
     # load dataset size
     size_dict = dict()
     if os.path.exists("./dataset_attr.txt"):
@@ -253,6 +254,7 @@ if __name__ == "__main__":
                     size_dict[line.split(",")[0]] = "error"
     # run dataset
     has_not_done = True
+    # break into 3 parts for 3 members to run
     part = len(data_sets) // 3
     part1 = data_sets[: part]
     part2 = data_sets[part: part * 2]
@@ -278,7 +280,8 @@ if __name__ == "__main__":
                         print("%s has error\n" % dataset)
                 else:
                     if dataset not in size_dict:
-                        dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(data_dir + dataset + ".tsv.gz")
+                        dataset_df = spark.read.format('csv').options(header='true', inferschema='true', sep='\t').load(
+                            data_dir + dataset + ".tsv.gz")
                         df_count = dataset_df.count()
                         attr_file.write("%s,%s\n" % (dataset, df_count))
                         print("%s has %s rows" % (dataset, df_count))

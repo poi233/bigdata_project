@@ -23,5 +23,5 @@ for file in files:
             cur = pd.read_json(path + '/' + file, typ='series')
     except:
         print(file + " error")
-with open("task1.json", 'w+') as fp:
+with open("./result/task1.json", 'w+') as fp:
     json.dump(output, fp, cls=MyEncoder)
