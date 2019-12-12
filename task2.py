@@ -432,7 +432,7 @@ def form_manual_label_json(file):
         for line in label_file:
             if 'column_name,true_label' in line:
                 continue
-            column_name = line.split(",")[0].split(".")[1]
+            column_name = line.split(",")[0].replace(".", "_")
             manual_labels = line.split(",")[1].strip().split("|")
             cur_dict = dict()
             cur_dict["column_name"] = column_name
@@ -468,7 +468,7 @@ if __name__ == "__main__":
         dataset = file.split(".")[0]
         column = file.split(".")[1]
         column_dict = dict()
-        column_dict["column_name"] = column
+        column_dict["column_name"] = "%s_%s" % (dataset, column)
         column_dict["semantic_types"] = []
         full_file = data_dir + file
         print("%s %s start" % (dataset, column))
