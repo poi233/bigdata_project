@@ -94,7 +94,7 @@ def reduce_key(a, b):
         else:
             min_value = min(a[1], b[1])
         if isinstance(a[2], datetime.datetime):
-            if a[1].timestamp() > b[2].timestamp():
+            if a[2].timestamp() > b[2].timestamp():
                 max_value = a[2]
             else:
                 max_value = b[2]
